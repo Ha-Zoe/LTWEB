@@ -3865,6 +3865,9 @@ a#scrollUp:hover {
 }
 
 .blog-img {
+    float: left;
+    max-width: 40%;
+    padding-right: 20px;
     overflow: hidden;
     position: relative;
 }
