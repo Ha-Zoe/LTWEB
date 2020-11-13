@@ -1942,8 +1942,7 @@ body {
 
 .single-bestseller .bestseller-text .price ul li span {
     font-size: 15px;
-        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     transition: .3s;
     font-weight: 600;
     font-style: italic;
@@ -3431,6 +3430,7 @@ a#scrollUp:hover {
 
 .product-info-price .product-addto-links {
     float: right;
+    margin-right: 20px;
 }
 
 .product-info-price .price-final span.old-price {
@@ -3446,7 +3446,7 @@ a#scrollUp:hover {
 }
 .product-add-form form .quality-button {
     display: flex;
-    border:1px solid grey;
+    border:1px solid rgb(228, 228, 228);
     margin-bottom: 10px;
     width: fit-content;
 }
@@ -3456,6 +3456,7 @@ a#scrollUp:hover {
     margin: -1px;
     text-align: center;
     width: 50px;
+    border: 1px solid #dddcdc;
 }
 .product-add-form form .quality-button a{
     border: 0 none;
@@ -3469,6 +3470,7 @@ a#scrollUp:hover {
 }
 
 .product-add-form form button{
+    margin-top: 20px;
     height: 50px;
     width: 300px;
 }
