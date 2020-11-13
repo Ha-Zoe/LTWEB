@@ -4135,15 +4135,10 @@ a#scrollUp:hover {
     clear: both;
     display: block;
 }
-.user-foot button[type='Button']{
-    width: 50%;
-    
-}
 .user-foot  .single-login{
-    float: left;
-    width: 50%;
+    text-align: left;
 }
-.login-title p {
+.user-foot  .clearfix{
     font-size: 16px;
     font-weight: 400;
     margin: 0;
@@ -4152,7 +4147,36 @@ a#scrollUp:hover {
     font-weight: 400;
     color: #333;
 }
+.user-foot  a.clearfix:hover {
+    color: #F07C29;
+}
+.user-foot button, .form-group button[type ='submit']{
+    width: fit-content;
+    padding: 5px 15px;
+    border-radius: 15px;
+    border: 2px solid #F07C29;
+    color: #F07C29;
+    font-weight: bold;
+    margin-bottom: 5px;
+}
 
+.user-foot button:hover,  .form-group button[type ='submit']:hover{
+   background: #F07C29;
+    color: white;
+    font-weight: 700px;
+}
+.user-foot .loginFb a{
+    background: #2c29f0;
+    color: white;
+    padding: 5px 15px;
+    border-radius: 15px;
+}
+.user-foot .loginGg a{
+    background: #f03029;
+    color: white;
+    padding: 5px 15px;
+    border-radius: 15px;
+}
 .login-form {
     border: 1px solid rgba(0, 0, 0, 0.12);
     display: inline-block;
