@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html class="smart-style-1">
+
 <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
@@ -137,14 +138,6 @@
                     </ul>
                 </li>
             </ul>
-
-            <!-- logout button -->
-            <div id="logout" class="btn-header transparent pull-right hidden">
-                <span> <a href="/admin/account/login" title="Sign Out" data-action="userLogout"
-                        data-logout-msg="Bạn có muốn đăng xuất khỏi hệ thống không?"><i class="fa fa-sign-out"></i></a>
-                </span>
-            </div>
-            <!-- end logout button -->
             <!-- multiple lang dropdown : find all flags in the flags page -->
             <ul class="header-dropdown-list hidden-xs">
                 <li>
@@ -173,24 +166,6 @@
     <!-- Left panel : Navigation area -->
     <!-- Note: This width of the aside area can be adjusted through LESS variables -->
     <aside id="left-panel">
-
-        <!-- User info -->
-        <div class="login-info hidden">
-            <span>
-                <!-- User image size is adjusted inside CSS, it should stay as it -->
-
-                <a href="/" target="_blank">
-
-                    <i class="fa fa-fw fa-desktop"></i>
-                    <span>
-                        Xem website
-                    </span>
-                    <i class="fa fa-external-link "></i>
-                </a>
-
-            </span>
-        </div>
-        <!-- end user info -->
         <!-- NAVIGATION : This navigation is also responsive-->
         <nav>
             <ul>
@@ -199,8 +174,8 @@
                             class="menu-item-parent">Tổng quan</span></a>
                 </li>
                 <li class="">
-                    <a href="product.html"><i class="fa fa-fw fa-bar-chart-o"></i> <span class="menu-item-parent">Sản phẩm</span><b
-                            class="collapse-sign"><em class="fa fa-plus-square-o"></em></b></a>
+                    <a href="product.html"><i class="fa fa-fw fa-bar-chart-o"></i> <span class="menu-item-parent">Sản
+                            phẩm</span><b class="collapse-sign"><em class="fa fa-plus-square-o"></em></b></a>
                     <ul style="display: none;">
                         <li>
                             <a href="product.html">Sản phẩm</a>
@@ -208,12 +183,9 @@
                     </ul>
                 </li>
                 <li class="">
-                    <a href="news.html"><i class="fa fa-fw fa-table"></i> <span class="menu-item-parent">Tin tức</span><b
-                            class="collapse-sign"><em class="fa fa-plus-square-o"></em></b></a>
+                    <a href="news.html"><i class="fa fa-fw fa-table"></i> <span class="menu-item-parent">Tin
+                            tức</span><b class="collapse-sign"><em class="fa fa-plus-square-o"></em></b></a>
                     <ul style="display: none;">
-                        <li>
-                            <a href="createNews.html">Thêm mới tin tức</a>
-                        </li>
                         <li>
                             <a href="news.html">Danh sách tin tức</a>
                         </li>
@@ -222,16 +194,16 @@
                 <li>
                     <a href="order.html"><i class="fa fa-fw fa-pencil-square-o"></i> <span class="menu-item-parent">Đơn
                             hàng</span><b class="collapse-sign"><em class="fa fa-plus-square-o"></em></b></a>
-                    <ul>
+                    <ul style="display: none;">
                         <li>
                             <a href="order.html">Đơn hàng</a>
                         </li>
                     </ul>
                 </li>
                 <li>
-                    <a href="member.html"><i class="fa fa-fw fa-windows"></i> <span class="menu-item-parent">Khách hàng</span><b
-                            class="collapse-sign"><em class="fa fa-plus-square-o"></em></b></a>
-                    <ul>
+                    <a href="member.html"><i class="fa fa-fw fa-windows"></i> <span class="menu-item-parent">Khách
+                            hàng</span><b class="collapse-sign"><em class="fa fa-plus-square-o"></em></b></a>
+                    <ul style="display: none;">
                         <li>
                             <a href="member.html">Danh sách khách hàng</a>
                         </li>
@@ -246,7 +218,6 @@
     </aside>
     <!-- END NAVIGATION -->
     <!-- MAIN PANEL -->
-
     <!-- ngView:  -->
     <div data-ng-view="" class="ng-scope">
         <div id="main" role="main" class="ng-scope">
@@ -280,10 +251,7 @@
 
         </div>
     </div>
-
     <!-- END MAIN PANEL -->
-
-
     <!-- PAGE FOOTER -->
     <div class="page-footer">
         <div class="row">
@@ -294,8 +262,9 @@
         </div>
     </div>
     <!-- END PAGE FOOTER -->
+
+    <script src="/Scripts/jQuery/jquery-2.1.4.min.js" type="text/javascript"></script>
+    <script src="/Scripts/bootstrap/js/bootstrap.min.js"></script>
 </body>
 
-<script src="/Scripts/jQuery/jquery-2.1.4.min.js" type="text/javascript"></script>
-<script src="/Scripts/bootstrap/js/bootstrap.min.js"></script>
 </html>
