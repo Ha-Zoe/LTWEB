@@ -1,5 +1,3 @@
-<!DOCTYPE html>
-
 <html class="smart-style-1">
 
 <head>
@@ -41,6 +39,7 @@
         href="/App_Themes/Admin/smartadmin-production-plugins.min.css">
     <link rel="stylesheet" type="text/css" media="screen" href="/App_Themes/Admin/smartadmin-production.min.css">
     <link rel="stylesheet" type="text/css" media="screen" href="/App_Themes/Admin/smartadmin-skins.min.css">
+
     <!-- SmartAdmin RTL Support  -->
 
 
@@ -127,13 +126,6 @@
         src="http://maps.google.com/maps-api-v3/api/js/42/9/common.js"></script>
     <script type="text/javascript" charset="UTF-8"
         src="http://maps.google.com/maps-api-v3/api/js/42/9/util.js"></script>
-    <script type="text/javascript" src="http://zoe.runtime.vn/ckeditor/config.js?t=G2VC"></script>
-    <link rel="stylesheet" type="text/css" href="http://zoe.runtime.vn/ckeditor/skins/moono/editor.css?t=G2VC">
-    <script type="text/javascript" src="http://zoe.runtime.vn/ckeditor/lang/en.js?t=G2VC"></script>
-    <script type="text/javascript" src="http://zoe.runtime.vn/ckeditor/styles.js?t=G2VC"></script>
-    <script type="text/javascript" src="http://zoe.runtime.vn/ckeditor/plugins/youtube/plugin.js?t=G2VC"></script>
-    <script type="text/javascript" src="http://zoe.runtime.vn/ckeditor/plugins/youtube/lang/en.js?t=G2VC"></script>
-    <style id="cke_ui_color" type="text/css"></style>
 </head>
 
 <body class="fixed-header fixed-navigation smart-style-1 desktop-detected ng-scope" ng-app="appModule">
@@ -143,12 +135,12 @@
         <div id="logo-group">
             <!-- PLACE YOUR LOGO HERE -->
             <span id="logo">
-            <div class="text-center">
-                <a href="index.html">
-                    <div class="logo-web">Zoe</div>
-                </a>
-            </div>
-        </span>
+                <div class="text-center">
+                    <a href="index.html">
+                        <div class="logo-web">Zoe</div>
+                    </a>
+                </div>
+            </span>
             <!-- END LOGO PLACEHOLDER -->
             <!-- Note: The activity badge color changes when clicked and resets the number to 0
         Suggestion: You may want to set a flag when this happens to tick off all checked messages / notifications -->
@@ -298,10 +290,10 @@
                         </li>
                     </ul>
                 </li>
-                <li class="">
+                <li>
                     <a href="#"><i class="fa fa-fw fa-table"></i> <span class="menu-item-parent">Tin tức</span><b
                             class="collapse-sign"><em class="fa fa-plus-square-o"></em></b></a>
-                    <ul style="display: none;">
+                    <ul>
                         <li>
                             <a href="/admin#/news/create">Thêm mới tin tức</a>
                         </li>
@@ -313,10 +305,10 @@
                         </li>
                     </ul>
                 </li>
-                <li>
+                <li class="">
                     <a href="#"><i class="fa fa-fw fa-pencil-square-o"></i> <span class="menu-item-parent">Đơn
                             hàng</span><b class="collapse-sign"><em class="fa fa-plus-square-o"></em></b></a>
-                    <ul>
+                    <ul style="display: none;">
                         <li>
                             <a href="/admin#/order">Đơn hàng</a>
                         </li>
@@ -328,10 +320,10 @@
                         </li>
                     </ul>
                 </li>
-                <li>
+                <li class="open">
                     <a href="#"><i class="fa fa-fw fa-windows"></i> <span class="menu-item-parent">Khách hàng</span><b
-                            class="collapse-sign"><em class="fa fa-plus-square-o"></em></b></a>
-                    <ul>
+                            class="collapse-sign"><em class="fa fa-minus-square-o"></em></b></a>
+                    <ul style="display: block;">
                         <li>
                             <a href="/admin#/member">Danh sách khách hàng</a>
                         </li>
@@ -357,7 +349,8 @@
 
     <!-- ngView:  -->
     <div data-ng-view="" class="ng-scope">
-        <div id="main" role="main" class="ng-scope">
+        <div id="main" role="main" block-ui="myBlockUI" ng-controller="memberController"
+            ng-init="initializeController()" class="ng-scope block-ui block-ui-anim-fade" aria-busy="false">
             <!-- RIBBON -->
             <div id="ribbon">
 
@@ -373,41 +366,276 @@
                 <!-- breadcrumb -->
                 <ol class="breadcrumb">
                     <li>Home</li>
-                    <li>Tổng quan</li>
+                    <li>Thành viên</li>
+                    <li>Thêm mới thành viên</li>
                 </ol>
                 <!-- end breadcrumb -->
                 <!-- You can also add more buttons to the
-        ribbon for further usability
-
-        Example below:
-
-        <span class="ribbon-button-alignment pull-right">
-        <span id="search" class="btn btn-ribbon hidden-xs" data-title="search"><i class="fa-grid"></i> Change Grid</span>
-        <span id="add" class="btn btn-ribbon hidden-xs" data-title="add"><i class="fa-plus"></i> Add</span>
-        <span id="search" class="btn btn-ribbon" data-title="search"><i class="fa-search"></i> <span class="hidden-mobile">Search</span></span>
-        </span> -->
-
+                ribbon for further usability
+                Example below:
+        -->
+                <span class="ribbon-button-alignment pull-right">
+                    <button type="button" class="btn btn-primary btn-sm" data-title="save" ng-click="create()"><i
+                            class="fa fa-save"></i> Lưu</button>
+                    <button type="button" class="btn btn-primary btn-sm" data-title="save" ng-click="createBack()"><i
+                            class="fa fa-plus"></i> Lưu &amp; Quay lại</button>
+                    <a href="/admin#/member" class="btn btn-default btn-sm">Trở về</a>
+                </span>
             </div>
             <!-- END RIBBON -->
             <!-- MAIN CONTENT -->
             <div id="content">
                 <div class="row">
-                    <div class="col-md-12">
-                        <div class="well">
-                            <div class="text-center">
-                                <h1>Chào mừng bạn đến với RUNTIME, <span>zoe</span></h1>
-                                <img src="//hstatic.net/0/global/design/imgs/macbook.png">
+                    <article class="col-md-12">
+                        <div ng-show="IsError" class="alert alert-danger fade in ng-hide">
+                            <button data-dismiss="alert" class="close"></button>
+                            <i class="fa-fw fa fa-times"></i>
+                            <strong>Error!</strong>
+                            <span ng-bind-html="Message" class="ng-binding"></span>
+                        </div>
+                        <div ng-show="IsSuccess" class="alert alert-success fade in ng-hide">
+                            <button data-dismiss="alert" class="close"></button>
+                            <i class="fa-fw fa fa-check"></i>
+                            <strong>Success!</strong> Cập nhật thành công.
+                        </div>
+                        <div ng-show="InValid" class="alert alert-danger fade in ng-hide">
+                            <button data-dismiss="alert" class="close"></button>
+                            <i class="fa-fw fa fa-times"></i>
+                            <strong>Error!</strong>
+                            <span ng-bind-html="Message" class="ng-binding"></span>
+                        </div>
+                    </article>
+                </div>
+                <div class="row">
+                    <div class="col-sm-12">
+                        <div class="well form-horizontal">
+                            <h2>Thông tin tài khoản</h2>
+                            <hr>
+                            <div class="form-group">
+                                <label class="col-md-3 control-label">Tài khoản</label>
+                                <div class="col-md-8">
+                                    <input type="text" ng-model="Code"
+                                        class="form-control ng-pristine ng-untouched ng-valid">
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label class="col-md-3 control-label">Emai đăng nhập</label>
+                                <div class="col-md-8">
+                                    <input type="text" class="form-control ng-pristine ng-untouched ng-valid"
+                                        ng-model="Email">
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label class="col-md-3 control-label">Mật khẩu</label>
+                                <div class="col-md-8">
+                                    <input type="password" class="form-control ng-pristine ng-untouched ng-valid"
+                                        ng-model="Password">
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label class="col-md-3 control-label">Nhắc lại mật khẩu</label>
+                                <div class="col-md-8">
+                                    <input type="password" class="form-control ng-pristine ng-untouched ng-valid"
+                                        ng-model="RePassword">
+                                </div>
+                            </div>
+
+                            <h2>Thông tin cá nhân</h2>
+                            <hr>
+                            <div class="form-group">
+                                <label class="col-md-3 control-label">Họ tên</label>
+                                <div class="col-md-8">
+                                    <input type="text" class="form-control ng-pristine ng-untouched ng-valid"
+                                        ng-model="Name">
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label class="col-md-3 control-label">Tỉnh/Thành phố</label>
+                                <div class="col-md-8">
+                                    <select class="form-control ng-pristine ng-untouched ng-valid" ng-model="ProvinceId"
+                                        ng-options="item.Id as item.Name for item in Provinces"
+                                        ng-change="getDistricts(ProvinceId)">
+                                        <option value="?" selected="selected"></option>
+                                        <option value="number:1" label="Hồ Chí Minh">Hồ Chí Minh</option>
+                                        <option value="number:2" label="Hà Nội">Hà Nội</option>
+                                        <option value="number:3" label="Đà Nẵng">Đà Nẵng</option>
+                                        <option value="number:4" label="Cần Thơ">Cần Thơ</option>
+                                        <option value="number:5" label=" Thừa Thiên - Huế"> Thừa Thiên - Huế</option>
+                                        <option value="number:6" label="An Giang">An Giang</option>
+                                        <option value="number:7" label="Bà Rịa-Vũng Tàu">Bà Rịa-Vũng Tàu</option>
+                                        <option value="number:8" label="Bạc Liêu">Bạc Liêu</option>
+                                        <option value="number:9" label="Bắc Kạn">Bắc Kạn</option>
+                                        <option value="number:10" label="Bắc Giang">Bắc Giang</option>
+                                        <option value="number:11" label="Bắc Ninh">Bắc Ninh</option>
+                                        <option value="number:12" label="Bến Tre">Bến Tre</option>
+                                        <option value="number:13" label="Bình Dương">Bình Dương</option>
+                                        <option value="number:14" label="Bình Định">Bình Định</option>
+                                        <option value="number:15" label="Bình Phước">Bình Phước</option>
+                                        <option value="number:16" label="Bình Thuận">Bình Thuận</option>
+                                        <option value="number:17" label="Cà Mau">Cà Mau</option>
+                                        <option value="number:18" label="Cao Bằng">Cao Bằng</option>
+                                        <option value="number:19" label="Đắk Lắk">Đắk Lắk</option>
+                                        <option value="number:20" label="Đắk Nông">Đắk Nông</option>
+                                        <option value="number:21" label="Điện Biên">Điện Biên</option>
+                                        <option value="number:22" label="Đồng Nai">Đồng Nai</option>
+                                        <option value="number:23" label="Đồng Tháp">Đồng Tháp</option>
+                                        <option value="number:24" label="Gia Lai">Gia Lai</option>
+                                        <option value="number:25" label="Hà Giang">Hà Giang</option>
+                                        <option value="number:26" label="Hà Nam">Hà Nam</option>
+                                        <option value="number:27" label="Hà Tây">Hà Tây</option>
+                                        <option value="number:28" label="Hà Tĩnh">Hà Tĩnh</option>
+                                        <option value="number:29" label="Hải Dương">Hải Dương</option>
+                                        <option value="number:30" label="Hải Phòng">Hải Phòng</option>
+                                        <option value="number:31" label="Hòa Bình">Hòa Bình</option>
+                                        <option value="number:32" label="Hậu Giang">Hậu Giang</option>
+                                        <option value="number:33" label="Hưng Yên">Hưng Yên</option>
+                                        <option value="number:34" label="Khánh Hòa">Khánh Hòa</option>
+                                        <option value="number:35" label="Kiên Giang">Kiên Giang</option>
+                                        <option value="number:36" label="Kon Tum">Kon Tum</option>
+                                        <option value="number:37" label="Lai Châu">Lai Châu</option>
+                                        <option value="number:38" label="Lào Cai">Lào Cai</option>
+                                        <option value="number:39" label="Lạng Sơn">Lạng Sơn</option>
+                                        <option value="number:40" label="Lâm Đồng">Lâm Đồng</option>
+                                        <option value="number:41" label="Long An">Long An</option>
+                                        <option value="number:42" label="Nam Định">Nam Định</option>
+                                        <option value="number:43" label="Nghệ An">Nghệ An</option>
+                                        <option value="number:44" label="Ninh Bình">Ninh Bình</option>
+                                        <option value="number:45" label="Ninh Thuận">Ninh Thuận</option>
+                                        <option value="number:46" label="Phú Thọ">Phú Thọ</option>
+                                        <option value="number:47" label="Phú Yên">Phú Yên</option>
+                                        <option value="number:48" label="Quảng Bình">Quảng Bình</option>
+                                        <option value="number:49" label="Quảng Nam">Quảng Nam</option>
+                                        <option value="number:50" label="Quảng Ngãi">Quảng Ngãi</option>
+                                        <option value="number:51" label="Quảng Ninh">Quảng Ninh</option>
+                                        <option value="number:52" label="Quảng Trị">Quảng Trị</option>
+                                        <option value="number:53" label="Sóc Trăng">Sóc Trăng</option>
+                                        <option value="number:54" label="Sơn La">Sơn La</option>
+                                        <option value="number:55" label="Tây Ninh">Tây Ninh</option>
+                                        <option value="number:56" label="Thái Bình">Thái Bình</option>
+                                        <option value="number:57" label="Thái Nguyên">Thái Nguyên</option>
+                                        <option value="number:58" label="Thanh Hóa">Thanh Hóa</option>
+                                        <option value="number:59" label="Thừa Thiên - Huế">Thừa Thiên - Huế</option>
+                                        <option value="number:60" label="Tiền Giang">Tiền Giang</option>
+                                        <option value="number:61" label="Trà Vinh">Trà Vinh</option>
+                                        <option value="number:62" label="Tuyên Quang">Tuyên Quang</option>
+                                        <option value="number:63" label="Vĩnh Long">Vĩnh Long</option>
+                                        <option value="number:64" label="Vĩnh Phúc">Vĩnh Phúc</option>
+                                        <option value="number:65" label="Yên Bái">Yên Bái</option>
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label class="col-md-3 control-label">Quận/Huyện</label>
+                                <div class="col-md-8">
+                                    <select class="form-control ng-pristine ng-untouched ng-valid" ng-model="DistrictId"
+                                        ng-options="item.Id as item.Name for item in Districts">
+                                        <option value="?" selected="selected"></option>
+                                        <option value="number:1" label="Quận 1">Quận 1</option>
+                                        <option value="number:5" label="Quận 2">Quận 2</option>
+                                        <option value="number:6" label="Quận 3">Quận 3</option>
+                                        <option value="number:7" label="Quận 4">Quận 4</option>
+                                        <option value="number:8" label="Quận 5">Quận 5</option>
+                                        <option value="number:9" label="Quận 6">Quận 6</option>
+                                        <option value="number:10" label="Quận 7">Quận 7</option>
+                                        <option value="number:11" label="Quận 8">Quận 8</option>
+                                        <option value="number:12" label="Quận 9">Quận 9</option>
+                                        <option value="number:13" label="Quận 10">Quận 10</option>
+                                        <option value="number:14" label="Quận 11">Quận 11</option>
+                                        <option value="number:15" label="Quận 12">Quận 12</option>
+                                        <option value="number:16" label="Quận Gò Vấp">Quận Gò Vấp</option>
+                                        <option value="number:17" label="Quận Tân Bình">Quận Tân Bình</option>
+                                        <option value="number:18" label="Quận Tân Phú">Quận Tân Phú</option>
+                                        <option value="number:19" label="Quận Bình Thạnh">Quận Bình Thạnh</option>
+                                        <option value="number:20" label="Quận Phú Nhuận">Quận Phú Nhuận</option>
+                                        <option value="number:21" label="Quận Thủ Đức">Quận Thủ Đức</option>
+                                        <option value="number:22" label="Quận Bình Tân">Quận Bình Tân</option>
+                                        <option value="number:51" label="Huyện Củ Chi">Huyện Củ Chi</option>
+                                        <option value="number:52" label="Huyện Hóc Môn">Huyện Hóc Môn</option>
+                                        <option value="number:53" label="Huyện Bình Chánh">Huyện Bình Chánh</option>
+                                        <option value="number:54" label="Huyện Nhà Bè">Huyện Nhà Bè</option>
+                                        <option value="number:55" label="Huyện Cần Giờ">Huyện Cần Giờ</option>
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label class="col-md-3 control-label">Avatar</label>
+                                <div class="col-md-8">
+                                    <img class="img-upload" src="/Areas/Admin/Images/icon-upload.png"
+                                        ng-init="Image='/Areas/Admin/Images/icon-upload.png'" onclick="UploadImage()">
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label class="col-md-3 control-label">Địa chỉ</label>
+                                <div class="col-md-8">
+                                    <input type="text" class="form-control ng-pristine ng-untouched ng-valid"
+                                        ng-model="Address">
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label class="col-md-3 control-label">Điện thoại</label>
+                                <div class="col-md-8">
+                                    <input type="text" class="form-control ng-pristine ng-untouched ng-valid"
+                                        ng-model="Phone">
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label class="col-md-3 control-label">Ngày sinh</label>
+                                <div class="col-md-8">
+                                    <input type="date" class="form-control ng-pristine ng-untouched ng-valid"
+                                        ng-model="DateOfBirth">
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label class="col-md-3 control-label">Ngưng dùng</label>
+                                <div class="col-md-8">
+                                    <input type="checkbox" name="checkbox" ng-model="Inactive"
+                                        class="ng-pristine ng-untouched ng-valid">
+                                </div>
+                            </div>
+                            <div class="form-actions">
+                                <div class="row">
+                                    <div class="col-md-12">
+                                        <button type="button" class="btn btn-primary" data-title="save"
+                                            ng-click="create()"><i class="fa fa-save"></i> Lưu</button>
+                                        <button type="button" class="btn btn-primary" data-title="save"
+                                            ng-click="createBack()"><i class="fa fa-plus"></i> Lưu &amp; Quay
+                                            lại</button>
+                                        <a href="/admin#/member" class="btn btn-default">Trở về</a>
+                                    </div>
+                                </div>
                             </div>
                         </div>
                     </div>
                 </div>
-                <!-- widget grid -->
-                <!-- end widget grid -->
-
             </div>
             <!-- END MAIN CONTENT -->
-
+            <div block-ui-container="" class="block-ui-container ng-scope">
+                <div class="block-ui-overlay"></div>
+                <div class="block-ui-message-container" aria-live="assertive" aria-atomic="true">
+                    <div class="block-ui-message ng-binding" ng-class="$_blockUiMessageClass">Loading ...</div>
+                </div>
+            </div>
         </div>
+        <script type="text/javascript" class="ng-scope">
+            function UploadImage() {
+                var finder = new CKFinder();
+                finder.selectActionFunction = function (fileUrl) {
+                    var scope = angular.element("#content").scope();
+                    scope.$apply(function () {
+                        scope.addImage(fileUrl);
+                    });
+                };
+                finder.popup();
+            }
+            function DeleteImage() {
+                var scope = angular.element("#content").scope();
+                scope.$apply(function () {
+                    scope.deleteImage();
+                });
+            }
+            $(document).ready(function () {
+            });
+        </script>
     </div>
 
     <!-- END MAIN PANEL -->
@@ -470,7 +698,7 @@
         </div>
     </div>
     <!-- END PAGE FOOTER -->
-    <div class="toast-bottom-full-width" id="toast-main" style="display: none;">
+    <div class="toast-bottom-full-width" id="toast-main">
         <div class="toast toast-success">
             <div class="toast-message">
                 <span>Bạn chỉ còn <a href="/admin">1 bước</a> để bắt đầu bán hàng.</span>
@@ -657,7 +885,7 @@
     <div id="divbigBoxes"></div>
     <div class="ui-widget ui-widget-content ui-corner-all ui-jqdialog" id="alertmod_jqgrid" dir="ltr" tabindex="-1"
         role="dialog" aria-labelledby="alerthd_jqgrid" aria-hidden="true"
-        style="width: 200px; height: auto; z-index: 950; overflow: hidden; top: 173.5px; left: 583px;">
+        style="width: 200px; height: auto; z-index: 950; overflow: hidden; top: 306.5px; left: 583px;">
         <div class="ui-jqdialog-titlebar ui-widget-header ui-corner-all ui-helper-clearfix" id="alerthd_jqgrid"
             style="cursor: move;"><span class="ui-jqdialog-title" style="float: left;">Warning</span><a
                 class="ui-jqdialog-titlebar-close ui-corner-all" style="right: 0.3em;"><span
@@ -666,40 +894,6 @@
             <div>Please, select row</div><span tabindex="0"><span tabindex="-1" id="jqg_alrt"></span></span>
         </div>
         <div class="jqResize ui-resizable-handle ui-resizable-se ui-icon ui-icon-gripsmall-diagonal-se"></div>
-    </div>
-    <div class="ui-dialog ui-widget ui-widget-content ui-corner-all ui-front ui-dialog-buttons ui-draggable ui-resizable"
-        tabindex="-1" role="dialog" aria-describedby="dialog" aria-labelledby="ui-id-2"
-        style="display: none; position: absolute;">
-        <div class="ui-dialog-titlebar ui-widget-header ui-corner-all ui-helper-clearfix ui-draggable-handle"><span
-                id="ui-id-2" class="ui-dialog-title">Tab thông tin</span><button type="button"
-                class="ui-dialog-titlebar-close"></button></div>
-        <div id="dialog" class="ng-scope ui-dialog-content ui-widget-content">
-            <form class="ng-pristine ng-valid">
-                <fieldset>
-                    <input name="authenticity_token" type="hidden">
-                    <div class="form-group">
-                        <label>Tiêu đề Tab</label>
-                        <input class="form-control" id="tab_title" name="tab_title" value="" placeholder="Tiều đề Tab"
-                            type="text">
-                    </div>
-
-                </fieldset>
-            </form>
-        </div>
-        <div class="ui-dialog-buttonpane ui-widget-content ui-helper-clearfix">
-            <div class="ui-dialog-buttonset"><button type="button" class="btn btn-default"><i
-                        class="fa fa-times"></i>&nbsp; Cancel</button><button type="button" class="btn btn-danger"><i
-                        class="fa fa-plus"></i>&nbsp; Add</button></div>
-        </div>
-        <div class="ui-resizable-handle ui-resizable-n" style="z-index: 90;"></div>
-        <div class="ui-resizable-handle ui-resizable-e" style="z-index: 90;"></div>
-        <div class="ui-resizable-handle ui-resizable-s" style="z-index: 90;"></div>
-        <div class="ui-resizable-handle ui-resizable-w" style="z-index: 90;"></div>
-        <div class="ui-resizable-handle ui-resizable-se ui-icon ui-icon-gripsmall-diagonal-se" style="z-index: 90;">
-        </div>
-        <div class="ui-resizable-handle ui-resizable-sw" style="z-index: 90;"></div>
-        <div class="ui-resizable-handle ui-resizable-ne" style="z-index: 90;"></div>
-        <div class="ui-resizable-handle ui-resizable-nw" style="z-index: 90;"></div>
     </div>
 </body>
 
