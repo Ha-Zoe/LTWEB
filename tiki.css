@@ -1693,10 +1693,6 @@ img {
     margin: 10px 0px 20px;
 }
 
-
-
-
-
 .jFkAwY {
     width: 1270px;
     padding-left: 50px;
@@ -1979,7 +1975,6 @@ element.style {
     font-weight: normal;
     line-height: 1.43;
 }
-
-body > div.cart-main-area.mb-70 {
+.cart-main-area.mb-70 {
   margin-bottom: 30px;
 }
