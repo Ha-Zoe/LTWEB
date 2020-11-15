@@ -11796,9 +11796,7 @@ aside {
         padding-right: 15px;
         position: relative;
         height: 100%;
-        width: 114%;
-        overflow-x: hidden;
-        overflow-y: scroll;
+        width: 100%;
     }
 
 .mobile-detected.fixed-navigation nav > ul {
