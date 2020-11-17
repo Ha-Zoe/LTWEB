@@ -1223,7 +1223,7 @@ body {
 }
 
 .slider-content-2 h2 {
-    color: #fff;
+    color: rgb(46, 82, 243);
     font-size: 80px;
     text-transform: none;
 }
@@ -3077,6 +3077,8 @@ a#scrollUp:hover {
 .flex-control-thumbs img {
     border: 1px solid transparent;
     transition: .3s;
+    width: 80px;
+    height: 100px;
 }
 
 .flex-control-thumbs .flex-active {
@@ -3108,13 +3110,14 @@ a#scrollUp:hover {
 }
 
 .product-info-area .valu>p {
-    font-size: 13px;
-    margin-bottom: 15px;
-    color: #333;
+    font-size: 14px;
+    margin-bottom: 17px;
+    color:rgb(36, 36, 36);
 }
 
 .product-info-area .valu>ul {
     padding-left: 26px;
+    list-style: circle;
 }
 
 .product-info-area .valu li .review-title h3 {
