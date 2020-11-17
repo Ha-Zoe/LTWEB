@@ -11,8 +11,7 @@
     <link href="App_Themes/Admin/font-awesome.min.css" rel="stylesheet">
 
     <!-- SmartAdmin Styles : Caution! DO NOT change the order -->
-    <link rel="stylesheet" type="text/css" media="screen"
-        href="App_Themes/Admin/smartadmin-production-plugins.min.css">
+    <link rel="stylesheet" type="text/css" media="screen" href="App_Themes/Admin/smartadmin-production-plugins.min.css">
     <link rel="stylesheet" type="text/css" media="screen" href="App_Themes/Admin/smartadmin-production.min.css">
     <link rel="stylesheet" type="text/css" media="screen" href="App_Themes/Admin/smartadmin-skins.min.css">
     <!-- SmartAdmin RTL Support  -->
@@ -237,12 +236,11 @@
                 <!-- end breadcrumb -->
                 <!-- You can also add more buttons to the
                 ribbon for further usability
-                Example below:
-        -->
+                Example below:-->
                 <span class="ribbon-button-alignment pull-right">
                     <button type="button" class="btn btn-primary btn-sm" data-title="save"
                         ng-click="createOrderDraft()"><i class="fa fa-save"></i> Lưu nháp</button>
-                    <a href="/admin#/order" class="btn btn-default btn-sm">Trở về</a>
+                    <a href="order.html" class="btn btn-default btn-sm">Trở về</a>
                 </span>
             </div>
             <!-- END RIBBON -->
@@ -292,7 +290,7 @@
                                                 <div class="box-search-advance-head" data-target="#modalCustomProduct"
                                                     data-toggle="modal">
                                                     <img width="30"
-                                                        src="//hstatic.net/0/0/global/design/imgs/next-create-custom-line-item.svg">
+                                                        src="images/next-create-custom-line-item.svg">
                                                     <span class="ml10">Tạo mới 1 sản phẩm tùy ý</span>
                                                 </div>
                                                 <div class="list-search-data">
@@ -384,7 +382,7 @@
                         <div class="col-md-4">
                             <div class="panel panel-default">
                                 <!-- ngIf: order.CustomerId==null||order.CustomerId<=0 -->
-                                <div class="panel-body ng-scope" ng-if="order.CustomerId==null||order.CustomerId<=0">
+                                <div class="panel-body ng-scope" ng-if="order.CustomerId==null||order.CustomerId <= 0">
                                     <h4 class="margin-bottom-10"><i class="fa fa-user text-primary"></i> Thông tin khách
                                         hàng</h4>
                                     <div class="findcustomer">
@@ -407,7 +405,7 @@
                                                 <div class="panel-body">
                                                     <div class="box-search-advance-head" ng-click="popupCustomer()">
                                                         <img width="30"
-                                                            src="//hstatic.net/0/0/global/design/imgs/next-create-customer.svg">
+                                                            src="images/next-create-customer.svg">
                                                         <span class="inline-block ml10">Tạo mới khách hàng</span>
                                                     </div>
                                                     <div class="list-search-data">
@@ -435,435 +433,18 @@
                                         </div>
                                     </div>
                                 </div><!-- end ngIf: order.CustomerId==null||order.CustomerId<=0 -->
-                                <!-- ngIf: order.CustomerId>0 -->
                             </div>
                         </div>
                     </div>
-                    <!-- end row -->
+      `              <!-- end row -->
                 </section>
                 <!-- end widget grid -->
             </div>
             <!-- END MAIN CONTENT -->
-            <!-- Modal -->
-            <div class="modal fade" id="modalCustomProduct" tabindex="-1" role="dialog"
-                aria-labelledby="modalCustomProductLabel" aria-hidden="true">
-                <div class="modal-dialog">
-                    <div class="modal-content">
-                        <div class="modal-header">
-                            <button type="button" class="close" data-dismiss="modal" aria-hidden="true">
-                                ×
-                            </button>
-                            <h4 class="modal-title" id="modalCustomProductLabel">Thêm sản phẩm tùy ý</h4>
-                        </div>
-                        <div class="modal-body">
-                            <div class="row form-group">
-                                <div class="col-sm-6">
-                                    <label>Tên</label>
-                                    <input type="text" ng-model="customProduct.ProductName"
-                                        class="form-control ng-pristine ng-untouched ng-valid">
-                                </div>
-                                <div class="col-sm-3">
-                                    <label>Giá</label>
-                                    <input type="text" ng-model="customProduct.Price"
-                                        class="form-control ng-pristine ng-untouched ng-valid">
-                                </div>
-                                <div class="col-sm-3">
-                                    <label>Số lượng</label>
-                                    <input type="number" ng-model="customProduct.Quantity"
-                                        class="form-control ng-pristine ng-untouched ng-valid ng-valid-min" min="1">
-                                </div>
-                            </div>
-                            <div class="form-group">
-                                <div class="form-group inline">
-                                    <label><input type="checkbox" ng-model="customProduct.IsShipping"
-                                            class="ng-pristine ng-untouched ng-valid"> Có giao hàng</label>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="modal-footer">
-                            <button type="button" class="btn btn-default" data-dismiss="modal">
-                                Hủy
-                            </button>
-                            <button type="button" class="btn btn-primary" ng-click="addCustomProduct()">
-                                Lưu
-                            </button>
-                        </div>
-                    </div><!-- /.modal-content -->
-                </div><!-- /.modal-dialog -->
-            </div>
-            <div class="modal fade" id="modalAddCustomer" tabindex="-1" role="dialog"
-                aria-labelledby="modalAddCustomerLabel" aria-hidden="true">
-                <div class="modal-dialog">
-                    <div class="modal-content">
-                        <div class="modal-header">
-                            <button type="button" class="close" data-dismiss="modal" aria-hidden="true">
-                                ×
-                            </button>
-                            <h4 class="modal-title" id="modalAddCustomerLabel">Tạo khách hàng mới</h4>
-                        </div>
-                        <div class="modal-body clearfix">
-                            <div class="form-group col-sm-12">
-                                <label>Họ tên</label>
-                                <input type="text" ng-model="customer.Name"
-                                    class="form-control ng-pristine ng-untouched ng-valid">
-                            </div>
-                            <div class="form-group  col-sm-6">
-                                <label>Email</label>
-                                <input type="text" ng-model="customer.Email"
-                                    class="form-control ng-pristine ng-untouched ng-valid">
-                            </div>
-                            <div class="form-group col-sm-6">
-                                <label>Số điện thoại</label>
-                                <input type="text" ng-model="customer.Phone"
-                                    class="form-control ng-pristine ng-untouched ng-valid">
-                            </div>
-                            <div class="form-group  col-sm-12">
-                                <label>Địa chỉ</label>
-                                <input type="text" ng-model="customer.Address"
-                                    class="form-control ng-pristine ng-untouched ng-valid">
-                            </div>
-                            <div class="form-group col-sm-6">
-                                <label>Tỉnh/Thành phố</label>
-                                <select ng-model="customer.ProvinceId" ng-init="customer.ProvinceId=Provinces[0].Id"
-                                    class="form-control ng-pristine ng-untouched ng-valid"
-                                    ng-change="getDistrictByProvince(customer.ProvinceId)"
-                                    ng-options="item.Id as item.Name for item in Provinces">
-                                    <option value="?" selected="selected"></option>
-                                </select>
-                            </div>
-                            <div class="form-group col-sm-6">
-                                <label>Quận/Huyện</label>
-                                <select ng-model="customer.DistrictId" ng-init="customer.DistrictId=Districts[0].Id"
-                                    class="form-control ng-pristine ng-untouched ng-valid"
-                                    ng-options="item.Id as item.Name for item in Districts">
-                                    <option value="?" selected="selected"></option>
-                                </select>
-                            </div>
-                            <div class="form-group  col-sm-12">
-                                <label> <input type="checkbox" ng-model="customer.IsNewsLetter"
-                                        class="ng-pristine ng-untouched ng-valid"> Nhận email quảng cáo</label>
-                            </div>
-                            <div class="clear"></div>
-                        </div>
-                        <div class="modal-footer">
-                            <button type="button" class="btn btn-default" data-dismiss="modal">
-                                Hủy
-                            </button>
-                            <button type="button" class="btn btn-primary" ng-click="createCustomer()">
-                                Lưu
-                            </button>
-                        </div>
-                    </div><!-- /.modal-content -->
-                </div><!-- /.modal-dialog -->
-            </div>
-            <div class="modal fade" id="modalDiscount" tabindex="-1" role="dialog" aria-labelledby="modalDiscountLabel"
-                aria-hidden="true">
-                <div class="modal-dialog">
-                    <div class="modal-content">
-                        <div class="modal-header">
-                            <button type="button" class="close" data-dismiss="modal" aria-hidden="true">
-                                ×
-                            </button>
-                            <h4 class="modal-title" id="modalDiscountLabel">Thêm khuyến mãi</h4>
-                        </div>
-                        <div class="modal-body">
-                            <div class="form-group">
-                                <label>Giảm giá đơn hàng này theo </label>
-                                <div class="input-group">
-                                    <div class="input-group-btn">
-                                        <button ng-click="changeDiscountType()"
-                                            ng-class="{'active':IsPercentage==false}"
-                                            class="btn btn-default btn-active active">₫</button>
-                                        <button ng-click="changeDiscountType()" class="btn ac btn-default btn-active"
-                                            ng-class="{'active':IsPercentage==true}">
-                                            %
-                                        </button>
-                                    </div>
-                                    <div class="input-group">
-                                        <input ng-model="DiscountValue" ng-change="changeDiscount()"
-                                            class="form-control width-150-px border-none-radius border-none-r width-input-discount ng-pristine ng-untouched ng-valid">
-                                        <!-- ngIf: IsPercentage==false --><span ng-if="IsPercentage==false" ng=""
-                                            class="input-group-addon input-text-currency ng-scope">₫</span>
-                                        <!-- end ngIf: IsPercentage==false -->
-                                        <!-- ngIf: IsPercentage==true -->
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="form-group">
-                                <label>Lý do</label>
-                                <input ng-model="order.DiscountName"
-                                    class="form-control ng-pristine ng-untouched ng-valid"
-                                    placeholder="Giảm giá sản phẩm, khách hàng thân thiết">
-                            </div>
-                        </div>
-                        <div class="modal-footer">
-                            <button type="button" class="btn btn-default" data-dismiss="modal">
-                                Hủy
-                            </button>
-                            <button type="button" class="btn btn-primary" ng-click="addDiscount()">
-                                Thêm khuyến mãi
-                            </button>
-                        </div>
-                    </div><!-- /.modal-content -->
-                </div><!-- /.modal-dialog -->
-            </div>
-            <div class="modal fade" id="modalShipping" tabindex="-1" role="dialog" aria-labelledby="modalShippingLabel"
-                aria-hidden="true">
-                <div class="modal-dialog">
-                    <div class="modal-content">
-                        <div class="modal-header">
-                            <button type="button" class="close" data-dismiss="modal" aria-hidden="true">
-                                ×
-                            </button>
-                            <h4 class="modal-title" id="modalShippingLabel">Phí vận chuyển</h4>
-                        </div>
-                        <div class="modal-body">
-                            <!-- ngIf: order.CustomerId==null||order.CustomerId<=0 -->
-                            <div class="alert-warning alert ng-scope"
-                                ng-if="order.CustomerId==null||order.CustomerId<=0">
-                                <label class="block-display mb10">Làm sao để chọn phí vận chuyển đã cấu hình ? </label>
-                                <p>Hãy thêm thông tin khách hàng với địa chỉ giao hàng đầy đủ để thấy các mức phí vận
-                                    chuyển đã cấu hình.</p>
-                            </div><!-- end ngIf: order.CustomerId==null||order.CustomerId<=0 -->
-                            <!-- ngRepeat: item in ShippingRates -->
-                            <div class="form-group">
-                                <label><input type="radio" ng-model="ShippingRateId" value="0" name="ShippingRateId"
-                                        class="ng-pristine ng-untouched ng-valid"> Miễn phí vận chuyển</label>
-                            </div>
-                            <div class="form-group">
-                                <label><input type="radio" ng-model="ShippingRateId" value="-1" name="ShippingRateId"
-                                        class="ng-pristine ng-untouched ng-valid"> Tùy chỉnh</label>
-                            </div>
-                            <div class="row">
-                                <div class="col-sm-7 form-group"><input type="text" ng-model="ShippingRateName"
-                                        placeholder="Tên phí vận chuyển"
-                                        class="form-control ng-pristine ng-untouched ng-valid"></div>
-                                <div class="col-sm-5 form-group"><input type="text" ng-model="ShippingAmount"
-                                        class="form-control ng-pristine ng-untouched ng-valid"></div>
-                            </div>
-                        </div>
-                        <div class="modal-footer">
-                            <button type="button" class="btn btn-default" data-dismiss="modal">
-                                Hủy
-                            </button>
-                            <button type="button" class="btn btn-primary" ng-click="updateShipping()">
-                                Cập nhật
-                            </button>
-                        </div>
-                    </div><!-- /.modal-content -->
-                </div><!-- /.modal-dialog -->
-            </div>
-            <div class="modal fade" id="modalMakePaid" tabindex="-1" role="dialog" aria-labelledby="modalMakePaidLabel"
-                aria-hidden="true">
-                <div class="modal-dialog">
-                    <div class="modal-content">
-                        <div class="modal-header">
-                            <button type="button" class="close" data-dismiss="modal" aria-hidden="true">
-                                ×
-                            </button>
-                            <h4 class="modal-title" id="modalMakePaidLabel">Tạo đơn hàng mới</h4>
-                        </div>
-                        <div class="modal-body">
-                            <label> Xác nhận đã thanh toán cho đơn hàng này?</label>
-                            <p>
-                                Trạng thái thanh toán của đơn hàng là <strong>Đã thanh toán</strong>.Sau khi đơn hàng đã
-                                tạo, bạn không thể thay đổi phương thức hoặc trạng thái thanh toán.
-                            </p>
-                            <p>Chọn phương thức thanh toán cho đơn hàng này</p>
-                            <div class="form-group">
-                                <select ng-model="order.PaymentMethodId"
-                                    class="form-control ng-pristine ng-untouched ng-valid"
-                                    ng-options="item.Id as item.Name for item in PaymentMethods">
-                                    <option value="?" selected="selected"></option>
-                                </select>
-                            </div>
-                            <p>Số tiền đã nhận : <span class="ng-binding">0 ₫</span></p>
-                        </div>
-                        <div class="modal-footer">
-                            <button type="button" class="btn btn-default" data-dismiss="modal">
-                                Đóng
-                            </button>
-                            <button type="button" class="btn btn-primary" ng-click="makePaid()">
-                                Tạo đơn hàng
-                            </button>
-                        </div>
-                    </div><!-- /.modal-content -->
-                </div><!-- /.modal-dialog -->
-            </div>
-            <div class="modal fade" id="modalMakePending" tabindex="-1" role="dialog"
-                aria-labelledby="modalMakePendingLabel" aria-hidden="true">
-                <div class="modal-dialog">
-                    <div class="modal-content">
-                        <div class="modal-header">
-                            <button type="button" class="close" data-dismiss="modal" aria-hidden="true">
-                                ×
-                            </button>
-                            <h4 class="modal-title" id="modalMakePendingLabel">Tạo đơn hàng mới</h4>
-                        </div>
-                        <div class="modal-body">
-                            <label>Xác nhận sẽ nhận thanh toán sau cho đơn hàng này?</label>
-                            <p>
-                                Trạng thái thanh toán của đơn hàng là <strong>Chờ xử lý</strong>.Sau khi đơn hàng đã
-                                tạo, bạn không thể thay đổi phương thức hoặc trạng thái thanh toán.
-                            </p>
-                            <p>Chọn phương thức thanh toán cho đơn hàng này</p>
-                            <div class="form-group">
-                                <select ng-model="order.PaymentMethodId"
-                                    class="form-control ng-pristine ng-untouched ng-valid"
-                                    ng-options="item.Id as item.Name for item in PaymentMethods">
-                                    <option value="?" selected="selected"></option>
-                                </select>
-                            </div>
-                            <p>Chờ thanh toán : <span class="ng-binding">0 ₫</span></p>
-                        </div>
-                        <div class="modal-footer">
-                            <button type="button" class="btn btn-default" data-dismiss="modal">
-                                Đóng
-                            </button>
-                            <button type="button" class="btn btn-primary" ng-click="makePending()">
-                                Tạo đơn hàng
-                            </button>
-                        </div>
-                    </div><!-- /.modal-content -->
-                </div><!-- /.modal-dialog -->
-            </div>
-            <div class="modal fade" id="modalCustomer" tabindex="-1" role="dialog" aria-labelledby="modalCustomerLabel"
-                aria-hidden="true">
-                <div class="modal-dialog">
-                    <div class="modal-content">
-                        <div class="modal-header">
-                            <button type="button" class="close" data-dismiss="modal" aria-hidden="true">
-                                ×
-                            </button>
-                            <h4 class="modal-title" id="modalCustomerLabel">Cập nhật email</h4>
-                        </div>
-                        <div class="modal-body clearfix">
-                            <div class="form-group col-sm-6">
-                                <label>Họ tên</label>
-                                <input type="text" ng-model="order.CustomerName"
-                                    class="form-control ng-pristine ng-untouched ng-valid">
-                            </div>
-                            <div class="form-group col-sm-6">
-                                <label>Số điện thoại</label>
-                                <input type="text" ng-model="order.CustomerPhone"
-                                    class="form-control ng-pristine ng-untouched ng-valid">
-                            </div>
-                            <div class="form-group  col-sm-12">
-                                <label>Địa chỉ</label>
-                                <input type="text" ng-model="order.CustomerAddress"
-                                    class="form-control ng-pristine ng-untouched ng-valid">
-                            </div>
-                            <div class="form-group  col-sm-12">
-                                <label>Email</label>
-                                <input type="text" ng-model="order.CustomerEmail"
-                                    class="form-control ng-pristine ng-untouched ng-valid">
-                                <p class="help-block">Email thông báo sẽ được gởi đến địa chỉ này</p>
-                            </div>
-                            <div class="form-group col-sm-6">
-                                <label>Tỉnh/Thành phố</label>
-                                <select ng-model="order.CustomerProvinceId"
-                                    class="form-control ng-pristine ng-untouched ng-valid"
-                                    ng-change="getCustomerDistricts()"
-                                    ng-options="item.Id as item.Name for item in Provinces">
-                                    <option value="?" selected="selected"></option>
-                                </select>
-                            </div>
-                            <div class="form-group col-sm-6">
-                                <label>Quận/Huyện</label>
-                                <select ng-model="order.CustomerDistrictId"
-                                    class="form-control ng-pristine ng-untouched ng-valid"
-                                    ng-options="item.Id as item.Name for item in CustomerDistricts">
-                                    <option value="?" selected="selected"></option>
-                                </select>
-                            </div>
-                            <div class="clear"></div>
-                        </div>
-                        <div class="modal-footer">
-                            <button type="button" class="btn btn-default" data-dismiss="modal">
-                                Hủy
-                            </button>
-                            <button type="button" class="btn btn-primary" ng-click="updateCustomer()">
-                                Lưu
-                            </button>
-                        </div>
-                    </div><!-- /.modal-content -->
-                </div><!-- /.modal-dialog -->
-            </div>
-            <div class="modal fade" id="modalDelivery" tabindex="-1" role="dialog" aria-labelledby="modalDeliveryLabel"
-                aria-hidden="true">
-                <div class="modal-dialog">
-                    <div class="modal-content">
-                        <div class="modal-header">
-                            <button type="button" class="close" data-dismiss="modal" aria-hidden="true">
-                                ×
-                            </button>
-                            <h4 class="modal-title" id="modalDeliveryLabel">Cập nhật thông tin giao hàng</h4>
-                        </div>
-                        <div class="modal-body clearfix">
-                            <div class="form-group col-sm-6">
-                                <label>Họ tên</label>
-                                <input type="text" ng-model="order.DeliveryName"
-                                    class="form-control ng-pristine ng-untouched ng-valid">
-                            </div>
-                            <div class="form-group col-sm-6">
-                                <label>Số điện thoại</label>
-                                <input type="text" ng-model="order.DeliveryPhone"
-                                    class="form-control ng-pristine ng-untouched ng-valid">
-                            </div>
-                            <div class="form-group  col-sm-12">
-                                <label>Địa chỉ</label>
-                                <input type="text" ng-model="order.DeliveryAddress"
-                                    class="form-control ng-pristine ng-untouched ng-valid">
-                            </div>
-                            <div class="form-group  col-sm-12">
-                                <label>Email</label>
-                                <input type="text" ng-model="order.DeliveryEmail"
-                                    class="form-control ng-pristine ng-untouched ng-valid">
-                            </div>
-                            <div class="form-group col-sm-6">
-                                <label>Tỉnh/Thành phố</label>
-                                <select ng-model="order.DeliveryProvinceId"
-                                    class="form-control ng-pristine ng-untouched ng-valid"
-                                    ng-change="getDeliveryDistricts()"
-                                    ng-options="item.Id as item.Name for item in Provinces">
-                                    <option value="?" selected="selected"></option>
-                                </select>
-                            </div>
-                            <div class="form-group col-sm-6">
-                                <label>Quận/Huyện</label>
-                                <select ng-model="order.DeliveryDistrictId"
-                                    class="form-control ng-pristine ng-untouched ng-valid"
-                                    ng-options="item.Id as item.Name for item in DeliveryDistricts">
-                                    <option value="?" selected="selected"></option>
-                                </select>
-                            </div>
-                            <div class="clear"></div>
-                        </div>
-                        <div class="modal-footer">
-                            <button type="button" class="btn btn-default" data-dismiss="modal">
-                                Hủy
-                            </button>
-                            <button type="button" class="btn btn-primary" ng-click="updateDelivery()">
-                                Lưu
-                            </button>
-                        </div>
-                    </div><!-- /.modal-content -->
-                </div><!-- /.modal-dialog -->
-            </div>
-            <!-- /.modal -->
-            <div block-ui-container="" class="block-ui-container ng-scope">
-                <div class="block-ui-overlay"></div>
-                <div class="block-ui-message-container" aria-live="assertive" aria-atomic="true">
-                    <div class="block-ui-message ng-binding" ng-class="$_blockUiMessageClass">Loading ...</div>
-                </div>
-            </div>
         </div>
-
     </div>
 
     <!-- END MAIN PANEL -->
-
-
     <!-- PAGE FOOTER -->
     <!-- PAGE FOOTER -->
     <div class="page-footer">
@@ -875,10 +456,8 @@
         </div>
     </div>
     <!-- END PAGE FOOTER -->
-</body>
-
-<script src="/Scripts/jQuery/jquery-2.1.4.min.js" type="text/javascript"></script>
-<script src="/Scripts/bootstrap/js/bootstrap.min.js"></script>
+    <script src="Scripts/jQuery/jquery-2.1.4.min.js" type="text/javascript"></script>
+    <script src="Scripts/bootstrap/js/bootstrap.min.js"></script>
 </body>
 
 </html>
