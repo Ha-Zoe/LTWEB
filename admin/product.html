@@ -10,8 +10,7 @@
     <link href="App_Themes/Admin/font-awesome.min.css" rel="stylesheet">
 
     <!-- SmartAdmin Styles : Caution! DO NOT change the order -->
-    <link rel="stylesheet" type="text/css" media="screen"
-        href="App_Themes/Admin/smartadmin-production-plugins.min.css">
+    <link rel="stylesheet" type="text/css" media="screen" href="App_Themes/Admin/smartadmin-production-plugins.min.css">
     <link rel="stylesheet" type="text/css" media="screen" href="App_Themes/Admin/smartadmin-production.min.css">
     <link rel="stylesheet" type="text/css" media="screen" href="App_Themes/Admin/smartadmin-skins.min.css">
 
@@ -267,9 +266,6 @@
         
                 Example below: -->
                 <span class="ribbon-button-alignment pull-right">
-                    <a href="javascript:void(0)" data-target="#modalExportProduct" data-toggle="modal"
-                        class="btn btn-sm btn-primary btn-sm hidden" data-title="add"><i class="fa fa-download"></i>
-                        Xuất file dữ liệu</a>
                     <a href="createProduct.html" class="btn btn-sm btn-primary btn-sm" data-title="add"><i
                             class="fa fa-plus"></i> Thêm mới</a>
                 </span>
@@ -284,49 +280,27 @@
                         <div class="row">
                             <div class="col-sm-4">
                                 <div class="form-group">
-                                    <label class="col-md-4 control-label">Nhóm sản phẩm</label>
+                                    <label class="col-md-4 control-label">Loại sách</label>
                                     <div class="col-md-8">
                                         <select class="form-control" id="ProductGroupId" name="ProductGroupId">
-                                            <option value="0">Toàn bộ danh mục</option>
-                                            <option value="235790">Hoa cắt cành</option>
-                                            <option value="235794">├──Cát tường</option>
-                                            <option value="235793">├──Cẩm chướng</option>
-                                            <option value="235797">├──Cẩm tú cầu</option>
-                                            <option value="235791">├──Hoa hồng</option>
-                                            <option value="235798">├──Loại khác</option>
-                                            <option value="235792">├──Lyly</option>
-                                            <option value="235796">├──Thạch thảo</option>
-                                            <option value="235795">├──Thủy tiên</option>
-                                            <option value="235779">Hoa hộp/ Hoa giỏ</option>
-                                            <option value="235780">Hoa chậu/ Hoa giỏ treo</option>
-                                            <option value="235799">├──Cúc các loại</option>
-                                            <option value="235801">├──Hoa chậu</option>
-                                            <option value="235782">├──Hoa giỏ treo</option>
-                                            <option value="235800">├──Sống đời</option>
-                                            <option value="235802">├──Tulip</option>
-                                            <option value="235783">├──Thu hải đường</option>
-                                            <option value="235781">Hoa lan</option>
-                                            <option value="235805">├──Địa lan</option>
-                                            <option value="235804">├──Lan hồ điệp</option>
-                                            <option value="235803">├──Lan rừng</option>
-                                            <option value="235806">├──Phong lan</option>
-                                            <option value="235784">Hoa sự kiện</option>
-                                            <option value="235807">├──Hoa hội nghị/ Khách sạn</option>
-                                            <option value="235786">├──Hoa lễ hội</option>
-                                            <option value="235785">├──Hoa tiệc cưới</option>
-                                            <option value="235787">Tiểu cảnh/ Sân vườn</option>
-                                            <option value="235789">├──Cảnh quan xanh</option>
-                                            <option value="235788">├──Hoa 4 mùa/ hoa bụi</option>
+                                            <option value="0">Toàn bộ</option>
+                                            <option value="235790">Tiểu thuyết</option>
+                                            <option value="235794">Ngôn tình</option>
+                                            <option value="235793">Lập trình</option>
+
                                         </select>
                                     </div>
                                 </div>
                             </div>
                             <div class="col-sm-4">
                                 <div class="form-group">
-                                    <label class="col-md-4 control-label">Tag sản phẩm</label>
+                                    <label class="col-md-4 control-label">Ngôn ngữ</label>
                                     <div class="col-md-8">
                                         <select class="form-control" id="ProductTag" name="ProductTag">
-                                            <option value="0">----------Tất cả----------</option>
+                                            <option value="0">Tất cả</option>
+                                            <option value="1">Tiếng Việt</option>
+                                            <option value="2">Tiếng Anh</option>
+
                                         </select>
                                     </div>
                                 </div>
@@ -366,6 +340,7 @@
                                                 cellspacing="0" cellpadding="0" border="0">
                                                 <thead>
                                                     <tr class="ui-jqgrid-labels" role="rowheader">
+                                                        <!-- select all -->
                                                         <th id="jqgrid_cb" role="columnheader" class=""
                                                             style="width: 20px;">
                                                             <div id="jqgh_jqgrid_cb"><input role="checkbox"
@@ -376,6 +351,7 @@
                                                                         class="ui-grid-ico-sort ui-icon-desc ui-state-disabled ui-icon ui-icon-triangle-1-s ui-sort-ltr"></span></span>
                                                             </div>
                                                         </th>
+                                                        <!-- edit and save button -->
                                                         <th id="jqgrid_act" role="columnheader" class=""
                                                             style="width: 47px;"><span
                                                                 class="ui-jqgrid-resize ui-jqgrid-resize-ltr"
@@ -387,19 +363,9 @@
                                                                         class="ui-grid-ico-sort ui-icon-desc ui-state-disabled ui-icon ui-icon-triangle-1-s ui-sort-ltr"></span></span>
                                                             </div>
                                                         </th>
-                                                        <th id="jqgrid_Id" role="columnheader" class=""
-                                                            style="width: 150px; display: none;"><span
-                                                                class="ui-jqgrid-resize ui-jqgrid-resize-ltr"
-                                                                style="cursor: col-resize;">&nbsp;</span>
-                                                            <div id="jqgh_jqgrid_Id" class="ui-jqgrid-sortable">Id<span
-                                                                    class="s-ico" style="display:none"><span sort="asc"
-                                                                        class="ui-grid-ico-sort ui-icon-asc ui-state-disabled ui-icon ui-icon-triangle-1-n ui-sort-ltr"></span><span
-                                                                        sort="desc"
-                                                                        class="ui-grid-ico-sort ui-icon-desc ui-state-disabled ui-icon ui-icon-triangle-1-s ui-sort-ltr"></span></span>
-                                                            </div>
-                                                        </th>
+                                                        <!-- name -->
                                                         <th id="jqgrid_Name" role="columnheader" class=""
-                                                            style="width: 100px;"><span
+                                                            style="width: 170px;"><span
                                                                 class="ui-jqgrid-resize ui-jqgrid-resize-ltr"
                                                                 style="cursor: col-resize;">&nbsp;</span>
                                                             <div id="jqgh_jqgrid_Name" class="ui-jqgrid-sortable">Tên
@@ -409,18 +375,20 @@
                                                                         class="ui-grid-ico-sort ui-icon-desc ui-state-disabled ui-icon ui-icon-triangle-1-s ui-sort-ltr"></span></span>
                                                             </div>
                                                         </th>
+                                                        <!-- type -->
                                                         <th id="jqgrid_ProductGroupName" role="columnheader" class=""
                                                             style="width: 100px;"><span
                                                                 class="ui-jqgrid-resize ui-jqgrid-resize-ltr"
                                                                 style="cursor: col-resize;">&nbsp;</span>
                                                             <div id="jqgh_jqgrid_ProductGroupName"
-                                                                class="ui-jqgrid-sortable">Danh mục<span class="s-ico"
+                                                                class="ui-jqgrid-sortable">Thể loại<span class="s-ico"
                                                                     style="display:none"><span sort="asc"
                                                                         class="ui-grid-ico-sort ui-icon-asc ui-state-disabled ui-icon ui-icon-triangle-1-n ui-sort-ltr"></span><span
                                                                         sort="desc"
                                                                         class="ui-grid-ico-sort ui-icon-desc ui-state-disabled ui-icon ui-icon-triangle-1-s ui-sort-ltr"></span></span>
                                                             </div>
                                                         </th>
+                                                        <!-- image -->
                                                         <th id="jqgrid_Image" role="columnheader" class=""
                                                             style="width: 100px;"><span
                                                                 class="ui-jqgrid-resize ui-jqgrid-resize-ltr"
@@ -433,8 +401,9 @@
                                                                         class="ui-grid-ico-sort ui-icon-desc ui-state-disabled ui-icon ui-icon-triangle-1-s ui-sort-ltr"></span></span>
                                                             </div>
                                                         </th>
+                                                        <!-- quantity -->
                                                         <th id="jqgrid_TrackingInventoryText" role="columnheader"
-                                                            class="" style="width: 134px;"><span
+                                                            class="" style="width: 63px;"><span
                                                                 class="ui-jqgrid-resize ui-jqgrid-resize-ltr"
                                                                 style="cursor: col-resize;">&nbsp;</span>
                                                             <div id="jqgh_jqgrid_TrackingInventoryText"
@@ -445,8 +414,9 @@
                                                                         class="ui-grid-ico-sort ui-icon-desc ui-state-disabled ui-icon ui-icon-triangle-1-s ui-sort-ltr"></span></span>
                                                             </div>
                                                         </th>
+                                                        <!-- price -->
                                                         <th id="jqgrid_Price" role="columnheader" class=""
-                                                            style="width: 100px;"><span
+                                                            style="width: 80px;"><span
                                                                 class="ui-jqgrid-resize ui-jqgrid-resize-ltr"
                                                                 style="cursor: col-resize;">&nbsp;</span>
                                                             <div id="jqgh_jqgrid_Price" class="ui-jqgrid-sortable">
@@ -457,18 +427,20 @@
                                                                         class="ui-grid-ico-sort ui-icon-desc ui-state-disabled ui-icon ui-icon-triangle-1-s ui-sort-ltr"></span></span>
                                                             </div>
                                                         </th>
+                                                        <!-- discount -->
                                                         <th id="jqgrid_PriceDiscount" role="columnheader" class=""
-                                                            style="width: 100px;"><span
+                                                            style="width: 47px;"><span
                                                                 class="ui-jqgrid-resize ui-jqgrid-resize-ltr"
                                                                 style="cursor: col-resize;">&nbsp;</span>
                                                             <div id="jqgh_jqgrid_PriceDiscount"
-                                                                class="ui-jqgrid-sortable">Giá giảm<span class="s-ico"
+                                                                class="ui-jqgrid-sortable">Ưu đãi<span class="s-ico"
                                                                     style="display:none"><span sort="asc"
                                                                         class="ui-grid-ico-sort ui-icon-asc ui-state-disabled ui-icon ui-icon-triangle-1-n ui-sort-ltr"></span><span
                                                                         sort="desc"
                                                                         class="ui-grid-ico-sort ui-icon-desc ui-state-disabled ui-icon ui-icon-triangle-1-s ui-sort-ltr"></span></span>
                                                             </div>
                                                         </th>
+                                                        <!-- hot sale -->
                                                         <th id="jqgrid_IsBest" role="columnheader" class=""
                                                             style="width: 47px;"><span
                                                                 class="ui-jqgrid-resize ui-jqgrid-resize-ltr"
@@ -481,6 +453,7 @@
                                                                         class="ui-grid-ico-sort ui-icon-desc ui-state-disabled ui-icon ui-icon-triangle-1-s ui-sort-ltr"></span></span>
                                                             </div>
                                                         </th>
+                                                        <!-- new -->
                                                         <th id="jqgrid_IsNew" role="columnheader" class=""
                                                             style="width: 47px;"><span
                                                                 class="ui-jqgrid-resize ui-jqgrid-resize-ltr"
@@ -493,42 +466,34 @@
                                                                         class="ui-grid-ico-sort ui-icon-desc ui-state-disabled ui-icon ui-icon-triangle-1-s ui-sort-ltr"></span></span>
                                                             </div>
                                                         </th>
-                                                        <th id="jqgrid_IsHot" role="columnheader" class=""
-                                                            style="width: 47px;"><span
-                                                                class="ui-jqgrid-resize ui-jqgrid-resize-ltr"
-                                                                style="cursor: col-resize;">&nbsp;</span>
-                                                            <div id="jqgh_jqgrid_IsHot" class="ui-jqgrid-sortable">
-                                                                Hot<span class="s-ico" style="display:none"><span
-                                                                        sort="asc"
-                                                                        class="ui-grid-ico-sort ui-icon-asc ui-state-disabled ui-icon ui-icon-triangle-1-n ui-sort-ltr"></span><span
-                                                                        sort="desc"
-                                                                        class="ui-grid-ico-sort ui-icon-desc ui-state-disabled ui-icon ui-icon-triangle-1-s ui-sort-ltr"></span></span>
-                                                            </div>
-                                                        </th>
+                                                        <!-- author -->
                                                         <th id="jqgrid_IsPromotion" role="columnheader" class=""
-                                                            style="width: 54px;"><span
+                                                            style="width: 120px;"><span
                                                                 class="ui-jqgrid-resize ui-jqgrid-resize-ltr"
                                                                 style="cursor: col-resize;">&nbsp;</span>
                                                             <div id="jqgh_jqgrid_IsPromotion"
-                                                                class="ui-jqgrid-sortable">Khuyến mãi<span class="s-ico"
+                                                                class="ui-jqgrid-sortable">Tác giả<span class="s-ico"
                                                                     style="display:none"><span sort="asc"
                                                                         class="ui-grid-ico-sort ui-icon-asc ui-state-disabled ui-icon ui-icon-triangle-1-n ui-sort-ltr"></span><span
                                                                         sort="desc"
                                                                         class="ui-grid-ico-sort ui-icon-desc ui-state-disabled ui-icon ui-icon-triangle-1-s ui-sort-ltr"></span></span>
                                                             </div>
                                                         </th>
+                                                        <!-- distributor -->
                                                         <th id="jqgrid_Index" role="columnheader" class=""
-                                                            style="width: 67px;"><span
+                                                            style="width: 120px;"><span
                                                                 class="ui-jqgrid-resize ui-jqgrid-resize-ltr"
                                                                 style="cursor: col-resize;">&nbsp;</span>
-                                                            <div id="jqgh_jqgrid_Index" class="ui-jqgrid-sortable">Thứ
-                                                                tự<span class="s-ico" style="display:none"><span
+                                                            <div id="jqgh_jqgrid_Index" class="ui-jqgrid-sortable">Công
+                                                                ty phát hành
+                                                                <span class="s-ico" style="display:none"><span
                                                                         sort="asc"
                                                                         class="ui-grid-ico-sort ui-icon-asc ui-state-disabled ui-icon ui-icon-triangle-1-n ui-sort-ltr"></span><span
                                                                         sort="desc"
                                                                         class="ui-grid-ico-sort ui-icon-desc ui-state-disabled ui-icon ui-icon-triangle-1-s ui-sort-ltr"></span></span>
                                                             </div>
                                                         </th>
+                                                        <!-- not use -->
                                                         <th id="jqgrid_Inactive" role="columnheader" class=""
                                                             style="width: 67px;"><span
                                                                 class="ui-jqgrid-resize ui-jqgrid-resize-ltr"
@@ -553,35 +518,47 @@
                                             <table id="jqgrid" tabindex="0" cellspacing="0" cellpadding="0" border="0"
                                                 role="grid" aria-multiselectable="true" aria-labelledby="gbox_jqgrid"
                                                 class="ui-jqgrid-btable table table-bordered table-striped"
-                                                style="width: 1100px;">
+                                                style="width: 1100px; height: auto;">
                                                 <tbody>
                                                     <tr class="jqgfirstrow" role="row" style="height:auto">
+                                                        <!-- all -->
                                                         <td role="gridcell" style="height:0px;width:20px;"></td>
+                                                        <!-- edit and save -->
                                                         <td role="gridcell" style="height:0px;width:47px;"></td>
-                                                        <td role="gridcell"
-                                                            style="height:0px;width:150px;display:none;"></td>
+                                                        <!-- name -->
+                                                        <td role="gridcell" style="height:0px;width:170px;"></td>
+                                                        <!-- type -->
                                                         <td role="gridcell" style="height:0px;width:100px;"></td>
+                                                        <!-- image -->
                                                         <td role="gridcell" style="height:0px;width:100px;"></td>
-                                                        <td role="gridcell" style="height:0px;width:100px;"></td>
-                                                        <td role="gridcell" style="height: 0px; width: 134px;"></td>
-                                                        <td role="gridcell" style="height:0px;width:100px;"></td>
-                                                        <td role="gridcell" style="height:0px;width:100px;"></td>
+                                                        <!-- quantity -->
+                                                        <td role="gridcell" style="height: 0px; width: 63px;"></td>
+                                                        <!-- price -->
+                                                        <td role="gridcell" style="height:0px;width:80px;"></td>
+                                                        <!-- discount -->
                                                         <td role="gridcell" style="height:0px;width:47px;"></td>
+                                                        <!-- hot sale -->
                                                         <td role="gridcell" style="height:0px;width:47px;"></td>
+                                                        <!-- new -->
                                                         <td role="gridcell" style="height:0px;width:47px;"></td>
-                                                        <td role="gridcell" style="height: 0px; width: 54px;"></td>
-                                                        <td role="gridcell" style="height:0px;width:67px;"></td>
+                                                        <!-- author -->
+                                                        <td role="gridcell" style="height: 0px; width: 120px;"></td>
+                                                        <!-- distributor -->
+                                                        <td role="gridcell" style="height:0px;width:120px;"></td>
+                                                        <!-- not use -->
                                                         <td role="gridcell" style="height: 0px; width: 67px;"></td>
                                                     </tr>
+
                                                     <!-- start product list -->
                                                     <!-- start single product -->
                                                     <tr role="row" id="197585" tabindex="-1"
                                                         class="ui-widget-content jqgrow ui-row-ltr">
+                                                        <!-- selsect -->
                                                         <td role="gridcell" style="text-align:center;width: 20px;"
                                                             aria-describedby="jqgrid_cb"><input role="checkbox"
                                                                 type="checkbox" id="jqg_jqgrid_197585" class="cbox"
                                                                 name="jqg_jqgrid_197585"></td>
-                                                                
+                                                        <!-- edit and save -->
                                                         <td role="gridcell" style="" title=""
                                                             aria-describedby="jqgrid_act"><button
                                                                 class="btn btn-xs btn-default"
@@ -592,53 +569,48 @@
                                                                 data-original-title="Save Row"
                                                                 onclick="jQuery('#jqgrid').saveRow('197585');"><i
                                                                     class="fa fa-save"></i></button></td>
-
-                                                        <td role="gridcell" style="display:none;" title="197585"
-                                                            aria-describedby="jqgrid_Id">197585</td>
-
-                                                        <td role="gridcell" style="" title="A001"
+                                                        <!-- name -->
+                                                        <td role="gridcell" style="text-align: left;"
+                                                            title="Tôi thấy hoa vàng trên cỏ xanh"
                                                             aria-describedby="jqgrid_Name"><a
-                                                                href="/admin#/product/edit/197585">A001</a></td>
-
-                                                        <td role="gridcell" style="" title="Hoa hộp/ Hoa giỏ"
-                                                            aria-describedby="jqgrid_ProductGroupName">Hoa hộp/ Hoa giỏ</td>
-
+                                                                style="text-decoration: none;"
+                                                                href="createProduct.html">Tôi thấy hoa vàng trên cỏ
+                                                                xanh</a></td>
+                                                        <!-- type -->
+                                                        <td role="gridcell" style="" title="Tiểu thuyết"
+                                                            aria-describedby="jqgrid_ProductGroupName">Tiểu thuyết
+                                                        </td>
+                                                        <!-- image -->
                                                         <td role="gridcell" style="text-align:center;" title=""
                                                             aria-describedby="jqgrid_Image"><img
                                                                 class="img-jqgrid-thumbnail"
                                                                 src="productImages/product1.jpg"
                                                                 originalvalue="productImages/product1.jpg"></td>
-
+                                                        <!-- quantity -->
                                                         <td role="gridcell" style="text-align:center;" title="---"
                                                             aria-describedby="jqgrid_TrackingInventoryText">---</td>
-
+                                                        <!-- price -->
                                                         <td role="gridcell" style="text-align:right;" title="550,000"
                                                             aria-describedby="jqgrid_Price">550,000</td>
-
+                                                        <!-- discount -->
                                                         <td role="gridcell" style="text-align:right;" title="0"
                                                             aria-describedby="jqgrid_PriceDiscount">0</td>
-
+                                                        <!-- hot sale -->
                                                         <td role="gridcell" style="text-align:center;" title=""
                                                             aria-describedby="jqgrid_IsBest"><input type="checkbox"
                                                                 checked="checked" value="true" offval="no"
                                                                 disabled="disabled"></td>
-
+                                                        <!-- new -->
                                                         <td role="gridcell" style="text-align:center;" title=""
                                                             aria-describedby="jqgrid_IsNew"><input type="checkbox"
                                                                 checked="checked" value="true" offval="no"
                                                                 disabled="disabled"></td>
 
-                                                        <td role="gridcell" style="text-align:center;" title=""
-                                                            aria-describedby="jqgrid_IsHot"><input type="checkbox"
-                                                                checked="checked" value="true" offval="no"
-                                                                disabled="disabled"></td>
-
-                                                        <td role="gridcell" style="text-align:center;" title=""
-                                                            aria-describedby="jqgrid_IsPromotion"><input type="checkbox"
-                                                                value="false" offval="no" disabled="disabled"></td>
+                                                        <td role="gridcell" style="" title="0"
+                                                            aria-describedby="jqgrid_Author">Nguyễn Nhật Ánh</td>
 
                                                         <td role="gridcell" style="" title="0"
-                                                            aria-describedby="jqgrid_Index">0</td>
+                                                            aria-describedby="jqgrid_Distributor">xxx</td>
 
                                                         <td role="gridcell" style="text-align:center;" title=""
                                                             aria-describedby="jqgrid_Inactive"><input type="checkbox"
