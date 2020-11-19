@@ -252,9 +252,9 @@
                                     <div class="col-md-8">
                                         <select class="form-control" id="NewsGroupId" name="NewsGroupId">
                                             <option value="0">Toàn bộ danh mục</option>
-                                            <option value="55572">Ý nghĩa các loài hoa</option>
-                                            <option value="55573">Tin khuyến mại</option>
-                                            <option value="55574">Trồng, Chăm sóc &amp; Bảo quản</option>
+                                            <option value="55572">Giới thiệu Sách</option>
+                                            <option value="55574">Hội sách</option>
+                                            <option value="55574">Sách mới</option>
                                         </select>
                                     </div>
                                 </div>
@@ -275,9 +275,11 @@
                         <!-- NEW WIDGET START -->
                         <article class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
                             <div class="ui-jqgrid ui-corner-all" id="gbox_jqgrid" dir="ltr" style="width: 1101px;">
+
                                 <div class="ui-widget-overlay jqgrid-overlay" id="lui_jqgrid"></div>
                                 <div class="loading ui-state-default ui-state-active" id="load_jqgrid"
                                     style="display: none;">Loading...</div>
+
                                 <div class="ui-jqgrid-view" id="gview_jqgrid" style="width: 1101px;">
                                     <div class="ui-jqgrid-titlebar ui-corner-top ui-helper-clearfix"><a role="link"
                                             class="ui-jqgrid-titlebar-close HeaderButton" style="right: 0px;"><span
@@ -288,10 +290,12 @@
                                             <table class="ui-jqgrid-htable table table-bordered table-hover"
                                                 style="width: 1101px;" role="grid" aria-labelledby="gbox_jqgrid"
                                                 cellspacing="0" cellpadding="0" border="0">
+                                                <!-- table head -->
                                                 <thead>
                                                     <tr class="ui-jqgrid-labels" role="rowheader">
+                                                        <!-- select all -->
                                                         <th id="jqgrid_cb" role="columnheader" class=""
-                                                            style="width: 20px;">
+                                                            style="width: 25px;">
                                                             <div id="jqgh_jqgrid_cb"><input role="checkbox"
                                                                     id="cb_jqgrid" class="cbox" type="checkbox"><span
                                                                     class="s-ico" style="display:none"><span sort="asc"
@@ -300,8 +304,9 @@
                                                                         class="ui-grid-ico-sort ui-icon-desc ui-state-disabled ui-icon ui-icon-triangle-1-s ui-sort-ltr"></span></span>
                                                             </div>
                                                         </th>
+                                                        <!-- edit, save and delete -->
                                                         <th id="jqgrid_act" role="columnheader" class=""
-                                                            style="width: 87px;"><span
+                                                            style="width: 80px;"><span
                                                                 class="ui-jqgrid-resize ui-jqgrid-resize-ltr"
                                                                 style="cursor: col-resize;">&nbsp;</span>
                                                             <div id="jqgh_jqgrid_act" class="ui-jqgrid-sortable"><span
@@ -311,19 +316,9 @@
                                                                         class="ui-grid-ico-sort ui-icon-desc ui-state-disabled ui-icon ui-icon-triangle-1-s ui-sort-ltr"></span></span>
                                                             </div>
                                                         </th>
-                                                        <th id="jqgrid_Id" role="columnheader" class=""
-                                                            style="width: 150px; display: none;"><span
-                                                                class="ui-jqgrid-resize ui-jqgrid-resize-ltr"
-                                                                style="cursor: col-resize;">&nbsp;</span>
-                                                            <div id="jqgh_jqgrid_Id" class="ui-jqgrid-sortable">Id<span
-                                                                    class="s-ico" style="display:none"><span sort="asc"
-                                                                        class="ui-grid-ico-sort ui-icon-asc ui-state-disabled ui-icon ui-icon-triangle-1-n ui-sort-ltr"></span><span
-                                                                        sort="desc"
-                                                                        class="ui-grid-ico-sort ui-icon-desc ui-state-disabled ui-icon ui-icon-triangle-1-s ui-sort-ltr"></span></span>
-                                                            </div>
-                                                        </th>
+                                                        <!-- name -->
                                                         <th id="jqgrid_Name" role="columnheader" class=""
-                                                            style="width: 108px;"><span
+                                                            style="width: 210px;"><span
                                                                 class="ui-jqgrid-resize ui-jqgrid-resize-ltr"
                                                                 style="cursor: col-resize;">&nbsp;</span>
                                                             <div id="jqgh_jqgrid_Name" class="ui-jqgrid-sortable">Tên
@@ -333,8 +328,9 @@
                                                                         class="ui-grid-ico-sort ui-icon-desc ui-state-disabled ui-icon ui-icon-triangle-1-s ui-sort-ltr"></span></span>
                                                             </div>
                                                         </th>
+                                                        <!-- type -->
                                                         <th id="jqgrid_NewsGroupName" role="columnheader" class=""
-                                                            style="width: 108px;"><span
+                                                            style="width: 150px;"><span
                                                                 class="ui-jqgrid-resize ui-jqgrid-resize-ltr"
                                                                 style="cursor: col-resize;">&nbsp;</span>
                                                             <div id="jqgh_jqgrid_NewsGroupName"
@@ -345,8 +341,9 @@
                                                                         class="ui-grid-ico-sort ui-icon-desc ui-state-disabled ui-icon ui-icon-triangle-1-s ui-sort-ltr"></span></span>
                                                             </div>
                                                         </th>
+                                                        <!-- create at -->
                                                         <th id="jqgrid_CreatedDate" role="columnheader" class=""
-                                                            style="width: 108px;"><span
+                                                            style="width: 130px;"><span
                                                                 class="ui-jqgrid-resize ui-jqgrid-resize-ltr"
                                                                 style="cursor: col-resize;">&nbsp;</span>
                                                             <div id="jqgh_jqgrid_CreatedDate"
@@ -357,8 +354,22 @@
                                                                         class="ui-grid-ico-sort ui-icon-desc ui-state-disabled ui-icon ui-icon-triangle-1-s ui-sort-ltr"></span></span>
                                                             </div>
                                                         </th>
+                                                        <!-- update at -->
+                                                        <th id="jqgrid_CreatedDate" role="columnheader" class=""
+                                                            style="width: 130px;"><span
+                                                                class="ui-jqgrid-resize ui-jqgrid-resize-ltr"
+                                                                style="cursor: col-resize;">&nbsp;</span>
+                                                            <div id="jqgh_jqgrid_CreatedDate"
+                                                                class="ui-jqgrid-sortable">Ngày sửa<span class="s-ico"
+                                                                    style="display:none"><span sort="asc"
+                                                                        class="ui-grid-ico-sort ui-icon-asc ui-state-disabled ui-icon ui-icon-triangle-1-n ui-sort-ltr"></span><span
+                                                                        sort="desc"
+                                                                        class="ui-grid-ico-sort ui-icon-desc ui-state-disabled ui-icon ui-icon-triangle-1-s ui-sort-ltr"></span></span>
+                                                            </div>
+                                                        </th>
+                                                        <!-- image -->
                                                         <th id="jqgrid_Image" role="columnheader" class=""
-                                                            style="width: 108px;"><span
+                                                            style="width: 100px;"><span
                                                                 class="ui-jqgrid-resize ui-jqgrid-resize-ltr"
                                                                 style="cursor: col-resize;">&nbsp;</span>
                                                             <div id="jqgh_jqgrid_Image" class="ui-jqgrid-sortable">Hình
@@ -369,20 +380,9 @@
                                                                         class="ui-grid-ico-sort ui-icon-desc ui-state-disabled ui-icon ui-icon-triangle-1-s ui-sort-ltr"></span></span>
                                                             </div>
                                                         </th>
-                                                        <th id="jqgrid_IsNew" role="columnheader" class=""
-                                                            style="width: 108px;"><span
-                                                                class="ui-jqgrid-resize ui-jqgrid-resize-ltr"
-                                                                style="cursor: col-resize;">&nbsp;</span>
-                                                            <div id="jqgh_jqgrid_IsNew" class="ui-jqgrid-sortable">
-                                                                Mới<span class="s-ico" style="display:none"><span
-                                                                        sort="asc"
-                                                                        class="ui-grid-ico-sort ui-icon-asc ui-state-disabled ui-icon ui-icon-triangle-1-n ui-sort-ltr"></span><span
-                                                                        sort="desc"
-                                                                        class="ui-grid-ico-sort ui-icon-desc ui-state-disabled ui-icon ui-icon-triangle-1-s ui-sort-ltr"></span></span>
-                                                            </div>
-                                                        </th>
+                                                        <!-- hot -->
                                                         <th id="jqgrid_IsHot" role="columnheader" class=""
-                                                            style="width: 108px;"><span
+                                                            style="width: 30px;"><span
                                                                 class="ui-jqgrid-resize ui-jqgrid-resize-ltr"
                                                                 style="cursor: col-resize;">&nbsp;</span>
                                                             <div id="jqgh_jqgrid_IsHot" class="ui-jqgrid-sortable">
@@ -393,20 +393,9 @@
                                                                         class="ui-grid-ico-sort ui-icon-desc ui-state-disabled ui-icon ui-icon-triangle-1-s ui-sort-ltr"></span></span>
                                                             </div>
                                                         </th>
-                                                        <th id="jqgrid_Index" role="columnheader" class=""
-                                                            style="width: 72px;"><span
-                                                                class="ui-jqgrid-resize ui-jqgrid-resize-ltr"
-                                                                style="cursor: col-resize;">&nbsp;</span>
-                                                            <div id="jqgh_jqgrid_Index" class="ui-jqgrid-sortable">Thứ
-                                                                tự<span class="s-ico" style="display:none"><span
-                                                                        sort="asc"
-                                                                        class="ui-grid-ico-sort ui-icon-asc ui-state-disabled ui-icon ui-icon-triangle-1-n ui-sort-ltr"></span><span
-                                                                        sort="desc"
-                                                                        class="ui-grid-ico-sort ui-icon-desc ui-state-disabled ui-icon ui-icon-triangle-1-s ui-sort-ltr"></span></span>
-                                                            </div>
-                                                        </th>
+                                                        <!-- author -->
                                                         <th id="jqgrid_CreatedByName" role="columnheader" class=""
-                                                            style="width: 108px;"><span
+                                                            style="width: 150px;"><span
                                                                 class="ui-jqgrid-resize ui-jqgrid-resize-ltr"
                                                                 style="cursor: col-resize;">&nbsp;</span>
                                                             <div id="jqgh_jqgrid_CreatedByName"
@@ -417,8 +406,9 @@
                                                                         class="ui-grid-ico-sort ui-icon-desc ui-state-disabled ui-icon ui-icon-triangle-1-s ui-sort-ltr"></span></span>
                                                             </div>
                                                         </th>
+                                                        <!-- inactive -->
                                                         <th id="jqgrid_Inactive" role="columnheader" class=""
-                                                            style="width: 111px;"><span
+                                                            style="width: 95px;"><span
                                                                 class="ui-jqgrid-resize ui-jqgrid-resize-ltr"
                                                                 style="cursor: col-resize;">&nbsp;</span>
                                                             <div id="jqgh_jqgrid_Inactive" class="ui-jqgrid-sortable">
@@ -431,6 +421,7 @@
                                                         </th>
                                                     </tr>
                                                 </thead>
+                                                <!-- end table head -->
                                             </table>
                                         </div>
                                     </div>
@@ -443,29 +434,37 @@
                                                 style="width: 1101px;">
                                                 <tbody>
                                                     <tr class="jqgfirstrow" role="row" style="height:auto">
-                                                        <td role="gridcell" style="height:0px;width:20px;"></td>
-                                                        <td role="gridcell" style="height: 0px; width: 87px;"></td>
-                                                        <td role="gridcell"
-                                                            style="height:0px;width:150px;display:none;"></td>
-                                                        <td role="gridcell" style="height:0px;width:108px;"></td>
-                                                        <td role="gridcell" style="height:0px;width:108px;"></td>
-                                                        <td role="gridcell" style="height:0px;width:108px;"></td>
-                                                        <td role="gridcell" style="height:0px;width:108px;"></td>
-                                                        <td role="gridcell" style="height:0px;width:108px;"></td>
-                                                        <td role="gridcell" style="height:0px;width:108px;"></td>
-                                                        <td role="gridcell" style="height:0px;width:72px;"></td>
-                                                        <td role="gridcell" style="height:0px;width:108px;"></td>
-                                                        <td role="gridcell" style="height: 0px; width: 111px;"></td>
+                                                        <!-- select -->
+                                                        <td role="gridcell" style="height:0px;width:25px;"></td>
+                                                        <!-- edit, save and delete -->
+                                                        <td role="gridcell" style="height: 0px; width: 80px;"></td>
+                                                        <!-- name -->
+                                                        <td role="gridcell" style="height:0px;width:210px;"></td>
+                                                        <!-- type -->
+                                                        <td role="gridcell" style="height:0px;width:150px;"></td>
+                                                        <!-- create at -->
+                                                        <td role="gridcell" style="height:0px;width:130px;"></td>
+                                                        <!-- update at -->
+                                                        <td role="gridcell" style="height:0px;width:130px;"></td>
+                                                        <!-- image -->
+                                                        <td role="gridcell" style="height:0px;width:100px;"></td>
+                                                        <!-- hot -->
+                                                        <td role="gridcell" style="height:0px;width:30px;"></td>
+                                                        <!-- author -->
+                                                        <td role="gridcell" style="height:0px;width:150px;"></td>
+                                                        <!-- inactive -->
+                                                        <td role="gridcell" style="height: 0px; width: 95px;"></td>
                                                     </tr>
                                                     <!-- start news list -->
                                                     <!-- start single news -->
                                                     <tr role="row" id="71959" tabindex="-1"
                                                         class="ui-widget-content jqgrow ui-row-ltr">
-                                                        <td role="gridcell" style="text-align:center;width: 20px;"
+                                                        <!-- select -->
+                                                        <td role="gridcell" style="text-align:center"
                                                             aria-describedby="jqgrid_cb"><input role="checkbox"
                                                                 type="checkbox" id="jqg_jqgrid_71959" class="cbox"
                                                                 name="jqg_jqgrid_71959"></td>
-
+                                                        <!-- edit, save and delete -->
                                                         <td role="gridcell" style="" title=""
                                                             aria-describedby="jqgrid_act"><button
                                                                 class="btn btn-xs btn-default"
@@ -480,45 +479,34 @@
                                                                 data-original-title="Cancel"
                                                                 onclick="jQuery('#jqgrid').restoreRow('71959');"><i
                                                                     class="fa fa-times"></i></button></td>
-
-                                                        <td role="gridcell" style="display:none;" title="71959"
-                                                            aria-describedby="jqgrid_Id">71959</td>
-
-                                                        <td role="gridcell" style=""
-                                                            title="Bảo quản hoa cắt cành tươi lâu"
+                                                        <!-- name -->
+                                                        <td role="gridcell" style="" title='Giới thiệu sách "Thức tỉnh"'
                                                             aria-describedby="jqgrid_Name"><a
-                                                                href="/admin#/news/edit/71959">Bảo quản hoa cắt cành
-                                                                tươi lâu</a></td>
-
-                                                        <td role="gridcell" style=""
-                                                            title="Trồng, Chăm sóc &amp; Bảo quản"
-                                                            aria-describedby="jqgrid_NewsGroupName">Trồng, Chăm sóc
-                                                            &amp; Bảo quản</td>
-
+                                                                style="text-decoration: none;"
+                                                                href="/admin#/news/edit/71959">Giới thiệu sách "Thức tỉnh"</a></td>
+                                                        <!-- type -->
+                                                        <td role="gridcell" style="" title="Giới thiệu Sách"
+                                                            aria-describedby="jqgrid_NewsGroupName">Giới thiệu Sách</td>
+                                                        <!-- create at -->
                                                         <td role="gridcell" style="text-align:center;"
-                                                            title="23/03/2016" aria-describedby="jqgrid_CreatedDate">
-                                                            23/03/2016</td>
-
+                                                            title="23/03/2016" aria-describedby="jqgrid_CreatedDate">23/03/2016</td>
+                                                        <!-- update at -->
+                                                        <td role="gridcell" style="text-align:center;"
+                                                            title="23/04/2016" aria-describedby="jqgrid_UpdateDate">23/04/2016</td>
+                                                        <!-- image -->
                                                         <td role="gridcell" style="text-align:center;" title=""
                                                             aria-describedby="jqgrid_Image"><img
                                                                 class="img-jqgrid-thumbnail"
                                                                 src="newsImages/product1.jpg"
                                                                 originalvalue="newsImages/product1.jpg"></td>
-
-                                                        <td role="gridcell" style="text-align:center;" title=""
-                                                            aria-describedby="jqgrid_IsNew"><input type="checkbox"
-                                                                value="false" offval="no" disabled="disabled"></td>
-
+                                                        <!-- hot -->
                                                         <td role="gridcell" style="text-align:center;" title=""
                                                             aria-describedby="jqgrid_IsHot"><input type="checkbox"
                                                                 value="false" offval="no" disabled="disabled"></td>
-
-                                                        <td role="gridcell" style="" title="7"
-                                                            aria-describedby="jqgrid_Index">7</td>
-
+                                                        <!-- author -->
                                                         <td role="gridcell" style="" title="Võ Tiến Trường"
-                                                            aria-describedby="jqgrid_CreatedByName">Võ Tiến Trường</td>
-
+                                                            aria-describedby="jqgrid_CreatedByName">LTP crazy</td>
+                                                        <!-- inactive -->
                                                         <td role="gridcell" style="text-align:center;" title=""
                                                             aria-describedby="jqgrid_Inactive"><input type="checkbox"
                                                                 value="false" offval="no" disabled="disabled"></td>
