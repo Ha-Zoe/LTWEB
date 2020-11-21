@@ -1,4 +1,4 @@
-(function($) {
+    (function($) {
     "use strict";
     
     /*----------------------------
@@ -413,6 +413,9 @@
         $('#checkout-login').slideToggle(900);
     });
     
+    $('#showsignup').on('click', function() {
+        $('#checkout-signup').slideToggle(900);
+    });
     /*-------------------------
       Showcoupon toggle function
     --------------------------*/
@@ -439,6 +442,10 @@
     --------------------------*/
     $('#showcat').on('click', function() {
         $('#hidecat').slideToggle(900);
+    });
+
+    $('#showreg').on('click', function() {
+        $('#hidereg').slideToggle(900);
     });
     
     /*Category accordion*/
