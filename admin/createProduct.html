@@ -316,7 +316,7 @@
                                                                 </label>
                                                             </section>
                                                             <section class="col col-6">
-                                                                <label class="label">Giá khuyến mãi</label>
+                                                                <label class="label">Chiết khấu %</label>
                                                                 <label class="input">
                                                                     <input type="text" ng-model="product.PriceDiscount"
                                                                         currency="product.PriceDiscount"
@@ -327,6 +327,7 @@
                                                     </div>
                                                 </div>
                                             </fieldset>
+
                                             <fieldset>
                                                 <div class="section col-xs-12">
                                                     <div class="col-md-3 col-xs-12">
@@ -377,29 +378,27 @@
                                                     </div>
                                                 </div>
                                             </fieldset>
+
                                             <fieldset>
                                                 <div class="section col-xs-12 ">
                                                     <div class="col-md-3 ">
-                                                        <h4>Loại sách</h4>
+                                                        <h4>Thể loại</h4>
                                                         <p>Phân loại sách theo loại để quản lý</p>
                                                     </div>
                                                     <div class="col-md-9 col-xs-12">
-                                                        <section>
-                                                            <label class="label">Loại sách</label>
-                                                            <input type="text">
-                                                        </section>
-
-                                                        <div class="table-choose-collections">
-                                                            <table
-                                                                class="table no-padding margin-bottom-10 margin-top-10">
-                                                                <tbody>
-                                                                    <!-- ngRepeat: item in ProductOtherGroups -->
-                                                                </tbody>
-                                                            </table>
+                                                        <div class="row">
+                                                            <section class="col col-6">
+                                                                <label class="label">Thể loại</label>
+                                                                <label class="input">
+                                                                    <input type="text" ng-model="product.SKU"
+                                                                        class="ng-pristine ng-untouched ng-valid">
+                                                                </label>
+                                                            </section>
                                                         </div>
                                                     </div>
                                                 </div>
                                             </fieldset>
+
                                             <fieldset>
                                                 <div class="section col-xs-12 ">
                                                     <div class="col-md-3 ">
@@ -441,6 +440,23 @@
                                                     </div>
                                                 </div>
                                             </fieldset>
+
+                                            <fieldset>
+                                                <div class="section col-xs-12 ">
+                                                    <div class="col-md-3 ">
+                                                        <h4>Mô tả</h4>
+                                                        <p>Bạn có thể nhập thông tin hình ảnh mô tả chi tiết sản phẩm
+                                                        </p>
+                                                    </div>
+                                                    <div class="col-md-9 col-xs-12">
+                                                        <section>
+                                                            <label class="label">Mô tả</label>
+                                                            <textarea style="height: 200px; width:100%;"></textarea>
+                                                        </section>
+                                                    </div>
+                                                </div>
+                                            </fieldset>
+
                                             <fieldset ng-show="product.IsVariant==false">
                                                 <div class="section col-xs-12 ">
                                                     <div class="col-md-3 ">
@@ -458,7 +474,7 @@
                                                                 </label>
                                                             </section>
                                                         </div>
-                                                        <div class="row">   
+                                                        <div class="row">
                                                             <section class="col col-6 ng-hide"
                                                                 ng-show="product.IsTrackingInventory>0">
                                                                 <label class="label">Số lượng</label>
@@ -479,6 +495,80 @@
                                                     </div>
                                                 </div>
                                             </fieldset>
+
+                                            <fieldset>
+                                                <div class="section col-xs-12 ">
+                                                    <div class="col-md-3 ">
+                                                        <h4>Thông tin</h4>
+                                                        <p>Bạn có thể nhập thông tin chi tiết về sản phẩm
+                                                        </p>
+                                                    </div>
+                                                    <div class="col-md-9 col-xs-12">
+                                                        <section>
+                                                            <label class="label">Chi tiết sản phẩm</label>
+                                                            <textarea style="height: 200px; width:100%;"></textarea>
+                                                        </section>
+                                                    </div>
+                                                </div>
+                                            </fieldset>
+
+                                            <fieldset>
+                                                <div class="section col-xs-12 ">
+                                                    <div class="col-md-3 ">
+                                                        <h4>Tác giả và công ty phát hành</h4>
+                                                        <p>Bạn có thể nhập tên tác giả và công ty phát hành để khách
+                                                            hàng
+                                                            tìm kiếm</p>
+                                                    </div>
+                                                    <div class="col-md-9 col-xs-12">
+                                                        <div class="row">
+                                                            <section class="col col-6">
+                                                                <label class="label">Tác giả</label>
+                                                                <label class="input">
+                                                                    <input type="text" ng-model="product.SKU"
+                                                                        class="ng-pristine ng-untouched ng-valid">
+                                                                </label>
+                                                            </section>
+                                                        </div>
+                                                        <div class="row">
+                                                            <section class="col col-6 ng-hide"
+                                                                ng-show="product.IsTrackingInventory>0">
+                                                                <label class="label">Công ty phát hành</label>
+                                                                <label class="input">
+                                                                    <input type="text" ng-model="product.Quantity"
+                                                                        class="ng-pristine ng-untouched ng-valid">
+                                                                </label>
+                                                            </section>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </fieldset>
+
+                                            <fieldset>
+                                                <div class="section col-xs-12 ">
+                                                    <div class="col-md-3 ">
+                                                        <h4>Loại bìa</h4>
+                                                        <p>Bạn có thể chọn loại bìa cho sản phẩm</p>
+                                                    </div>
+                                                    <div class="col-md-9 col-xs-12">
+                                                        <section>
+                                                            <label class="label">Loại bìa</label>
+                                                            <div class="row">
+                                                                <div class="col col-4">
+                                                                    <input type="radio" id="biaCung" name="loaiBia"
+                                                                        value="biaCung">
+                                                                    <label for="biaCung">Bìa cứng</label><br>
+                                                                    
+                                                                    <input type="radio" id="biaMem" name="loaiBia"
+                                                                        value="biaMem">
+                                                                    <label for="biaMem">Bìa mềm</label><br>
+                                                                </div>
+                                                            </div>
+                                                        </section>
+                                                    </div>
+                                                </div>
+                                            </fieldset>
+
                                             <fieldset>
                                                 <div class="section col-xs-12 ">
                                                     <div class="col-md-3 ">
@@ -500,8 +590,28 @@
                                                     </div>
                                                 </div>
                                             </fieldset>
+
+                                            <fieldset>
+                                                <div class="section col-xs-12 ">
+                                                    <div class="col-md-3 ">
+                                                        <h4>Ngày tạo</h4>
+                                                        <p>Cho biết ngày tạo sản phẩm, bạn không thể thay đổi trường này</p>
+                                                    </div>
+                                                    <div class="col-md-9 col-xs-12">
+                                                        <section>
+                                                            <label class="label">Ngày tạo</label>
+                                                            <div class="row">
+                                                                <div class="col col-4">
+                                                                    <label class="text">20/10/2020</label>
+                                                                </div>
+                                                            </div>
+                                                        </section>
+                                                    </div>
+                                                </div>
+                                            </fieldset>
+
                                             <footer>
-                                                <a href="/admin#/product" class="btn btn-default">Trở về</a>
+                                                <a href="product.html" class="btn btn-default">Trở về</a>
                                                 <button class="btn btn-primary" type="button"
                                                     ng-click="createBack()">Lưu &amp; Quay lại</button>
                                                 <button class="btn btn-default" type="button"
