@@ -310,6 +310,7 @@
                                                     </div>
                                                 </div>
                                             </fieldset>
+
                                             <fieldset>
                                                 <div class="section col-xs-12">
                                                     <div class="col-md-3 col-xs-12">
@@ -330,33 +331,43 @@
                                                     </div>
                                                 </div>
                                             </fieldset>
+
                                             <fieldset>
                                                 <div class="section col-xs-12 ">
                                                     <div class="col-md-3 ">
-                                                        <h4>Nhóm tin tức</h4>
-                                                        <p>Phân loại tin tức theo nhóm để quản lý</p>
+                                                        <h4>Thể loại</h4>
+                                                        <p>Phân loại tin tức theo loại để quản lý</p>
                                                     </div>
-                                                    <div class="col-md-9 col-xs-12 wrapper-content p-t15 ">
+                                                    <div class="col-md-9 col-xs-12">
+                                                        <div class="row">
+                                                            <section class="col col-xs-12">
+                                                                <label class="label">Thể loại</label>
+                                                                <label class="input">
+                                                                    <input type="text" ng-model="product.SKU"
+                                                                        class="ng-pristine ng-untouched ng-valid">
+                                                                </label>
+                                                            </section>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </fieldset>
+
+                                            <fieldset>
+                                                <div class="section col-xs-12 ">
+                                                    <div class="col-md-3 ">
+                                                        <h4>Mô tả ngắn</h4>
+                                                        <p>Bạn có thể nhập mô tả ngắn về tin tức
+                                                        </p>
+                                                    </div>
+                                                    <div class="col-md-9 col-xs-12">
                                                         <section>
-                                                            <label class="label">Danh mục tin tức</label>
-                                                            <label class="select">
-                                                                <select ng-model="NewsGroupId"
-                                                                    ng-options="item.Id as item.NameLevel for item in NewsGroups"
-                                                                    class="ng-pristine ng-untouched ng-valid">
-                                                                    <option value="number:0" label="Toàn bộ danh mục"
-                                                                        selected="selected">Toàn bộ danh mục</option>
-                                                                    <option value="number:55572"
-                                                                        label="Giới thiệu sách">Giới thiệu sách</option>
-                                                                    <option value="number:55573" label="Hội sách">Hội sách</option>
-                                                                    <option value="number:55574"
-                                                                        label="Sách mới">Sách mới</option>
-                                                                </select>
-                                                                <i></i>
-                                                            </label>
+                                                            <label class="label">Mô tả</label>
+                                                            <textarea style="height: 200px; width:100%;"></textarea>
                                                         </section>
                                                     </div>
                                                 </div>
                                             </fieldset>
+
                                             <fieldset>
                                                 <div class="section col-xs-12 ">
                                                     <div class="col-md-3 ">
@@ -367,14 +378,12 @@
                                                     <div class="col-md-9 col-xs-12 wrapper-content p-t15 ">
                                                         <section>
                                                             <label class="label">Nội dung</label>
-                                                            <textarea ckeditor="editorOptions" ng-model="Content"
-                                                                class="ng-untouched ng-valid ng-valid-parse ng-pristine"
-                                                                style="visibility: hidden; display: block;"></textarea>
-                                                            <!-- ckeditor -->
+                                                            <textarea style="height: 200px; width:100%;"></textarea>
                                                         </section>
                                                     </div>
                                                 </div>
                                             </fieldset>
+
                                             <fieldset>
                                                 <div class="section col-xs-12 ">
                                                     <div class="col-md-3 ">
@@ -402,10 +411,12 @@
                                                     </div>
                                                 </div>
                                             </fieldset>
+
                                             <fieldset>
                                                 <div class="section col-xs-12 ">
                                                     <div class="col-md-3 ">
                                                         <h4>Người viết</h4>
+                                                        <p>Cho biết tác giả của bài viết</p>
                                                     </div>
                                                     <div class="col-md-9 col-xs-12 wrapper-content p-t15 ">
                                                         <section>
@@ -424,6 +435,7 @@
                                                     </div>
                                                 </div>
                                             </fieldset>
+
                                             <fieldset>
                                                 <div class="section col-xs-12 ">
                                                     <div class="col-md-3 ">
@@ -445,6 +457,26 @@
                                                     </div>
                                                 </div>
                                             </fieldset>
+
+                                            <fieldset>
+                                                <div class="section col-xs-12 ">
+                                                    <div class="col-md-3 ">
+                                                        <h4>Ngày tạo</h4>
+                                                        <p>Cho biết ngày tạo sản phẩm, bạn không thể thay đổi trường này</p>
+                                                    </div>
+                                                    <div class="col-md-9 col-xs-12">
+                                                        <section>
+                                                            <label class="label">Ngày tạo</label>
+                                                            <div class="row">
+                                                                <div class="col col-4">
+                                                                    <label class="text">20/10/2020</label>
+                                                                </div>
+                                                            </div>
+                                                        </section>
+                                                    </div>
+                                                </div>
+                                            </fieldset>
+
                                             <footer>
                                                 <a href="news.html" class="btn btn-default">Trở về</a>
                                                 <button class="btn btn-primary" type="button"

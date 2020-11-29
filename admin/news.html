@@ -248,10 +248,10 @@
                         <div class="row">
                             <div class="col-sm-5">
                                 <div class="form-group">
-                                    <label class="col-md-4 control-label">Nhóm tin tức</label>
+                                    <label class="col-md-4 control-label">Thể loại</label>
                                     <div class="col-md-8">
                                         <select class="form-control" id="NewsGroupId" name="NewsGroupId">
-                                            <option value="0">Toàn bộ danh mục</option>
+                                            <option value="0">Toàn bộ</option>
                                             <option value="55572">Giới thiệu Sách</option>
                                             <option value="55574">Hội sách</option>
                                             <option value="55574">Sách mới</option>
@@ -274,16 +274,14 @@
                     <div class="row">
                         <!-- NEW WIDGET START -->
                         <article class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
-                            <div class="ui-jqgrid ui-corner-all" id="gbox_jqgrid" dir="ltr" style="width: 1101px;">
+                            <div class="ui-jqgrid ui-corner-all" id="gbox_jqgrid" dir="ltr">
 
                                 <div class="ui-widget-overlay jqgrid-overlay" id="lui_jqgrid"></div>
                                 <div class="loading ui-state-default ui-state-active" id="load_jqgrid"
                                     style="display: none;">Loading...</div>
 
                                 <div class="ui-jqgrid-view" id="gview_jqgrid" style="width: 1101px;">
-                                    <div class="ui-jqgrid-titlebar ui-corner-top ui-helper-clearfix"><a role="link"
-                                            class="ui-jqgrid-titlebar-close HeaderButton" style="right: 0px;"><span
-                                                class="ui-icon ui-icon-circle-triangle-n"></span></a><span
+                                    <div class="ui-jqgrid-titlebar ui-corner-top ui-helper-clearfix"><span
                                             class="ui-jqgrid-title">Danh sách tin tức</span></div>
                                     <div class="ui-jqgrid-hdiv" style="width: 1101px;">
                                         <div class="ui-jqgrid-hbox">
@@ -297,36 +295,22 @@
                                                         <th id="jqgrid_cb" role="columnheader" class=""
                                                             style="width: 25px;">
                                                             <div id="jqgh_jqgrid_cb"><input role="checkbox"
-                                                                    id="cb_jqgrid" class="cbox" type="checkbox"><span
-                                                                    class="s-ico" style="display:none"><span sort="asc"
-                                                                        class="ui-grid-ico-sort ui-icon-asc ui-state-disabled ui-icon ui-icon-triangle-1-n ui-sort-ltr"></span><span
-                                                                        sort="desc"
-                                                                        class="ui-grid-ico-sort ui-icon-desc ui-state-disabled ui-icon ui-icon-triangle-1-s ui-sort-ltr"></span></span>
-                                                            </div>
+                                                                    id="cb_jqgrid" class="cbox" type="checkbox"></div>
                                                         </th>
                                                         <!-- edit, save and delete -->
                                                         <th id="jqgrid_act" role="columnheader" class=""
-                                                            style="width: 80px;"><span
+                                                            style="width: 50px;"><span
                                                                 class="ui-jqgrid-resize ui-jqgrid-resize-ltr"
                                                                 style="cursor: col-resize;">&nbsp;</span>
-                                                            <div id="jqgh_jqgrid_act" class="ui-jqgrid-sortable"><span
-                                                                    class="s-ico" style="display:none"><span sort="asc"
-                                                                        class="ui-grid-ico-sort ui-icon-asc ui-state-disabled ui-icon ui-icon-triangle-1-n ui-sort-ltr"></span><span
-                                                                        sort="desc"
-                                                                        class="ui-grid-ico-sort ui-icon-desc ui-state-disabled ui-icon ui-icon-triangle-1-s ui-sort-ltr"></span></span>
-                                                            </div>
+                                                            <div id="jqgh_jqgrid_act" class="ui-jqgrid-sortable"></div>
                                                         </th>
                                                         <!-- name -->
                                                         <th id="jqgrid_Name" role="columnheader" class=""
-                                                            style="width: 210px;"><span
+                                                            style="width: 200px;"><span
                                                                 class="ui-jqgrid-resize ui-jqgrid-resize-ltr"
                                                                 style="cursor: col-resize;">&nbsp;</span>
                                                             <div id="jqgh_jqgrid_Name" class="ui-jqgrid-sortable">Tên
-                                                                tin tức<span class="s-ico" style=""><span sort="asc"
-                                                                        class="ui-grid-ico-sort ui-icon-asc ui-icon ui-icon-triangle-1-n ui-sort-ltr"></span><span
-                                                                        sort="desc"
-                                                                        class="ui-grid-ico-sort ui-icon-desc ui-state-disabled ui-icon ui-icon-triangle-1-s ui-sort-ltr"></span></span>
-                                                            </div>
+                                                                tin tức</div>
                                                         </th>
                                                         <!-- type -->
                                                         <th id="jqgrid_NewsGroupName" role="columnheader" class=""
@@ -334,38 +318,7 @@
                                                                 class="ui-jqgrid-resize ui-jqgrid-resize-ltr"
                                                                 style="cursor: col-resize;">&nbsp;</span>
                                                             <div id="jqgh_jqgrid_NewsGroupName"
-                                                                class="ui-jqgrid-sortable">Danh mục<span class="s-ico"
-                                                                    style="display:none"><span sort="asc"
-                                                                        class="ui-grid-ico-sort ui-icon-asc ui-state-disabled ui-icon ui-icon-triangle-1-n ui-sort-ltr"></span><span
-                                                                        sort="desc"
-                                                                        class="ui-grid-ico-sort ui-icon-desc ui-state-disabled ui-icon ui-icon-triangle-1-s ui-sort-ltr"></span></span>
-                                                            </div>
-                                                        </th>
-                                                        <!-- create at -->
-                                                        <th id="jqgrid_CreatedDate" role="columnheader" class=""
-                                                            style="width: 130px;"><span
-                                                                class="ui-jqgrid-resize ui-jqgrid-resize-ltr"
-                                                                style="cursor: col-resize;">&nbsp;</span>
-                                                            <div id="jqgh_jqgrid_CreatedDate"
-                                                                class="ui-jqgrid-sortable">Ngày tạo<span class="s-ico"
-                                                                    style="display:none"><span sort="asc"
-                                                                        class="ui-grid-ico-sort ui-icon-asc ui-state-disabled ui-icon ui-icon-triangle-1-n ui-sort-ltr"></span><span
-                                                                        sort="desc"
-                                                                        class="ui-grid-ico-sort ui-icon-desc ui-state-disabled ui-icon ui-icon-triangle-1-s ui-sort-ltr"></span></span>
-                                                            </div>
-                                                        </th>
-                                                        <!-- update at -->
-                                                        <th id="jqgrid_CreatedDate" role="columnheader" class=""
-                                                            style="width: 130px;"><span
-                                                                class="ui-jqgrid-resize ui-jqgrid-resize-ltr"
-                                                                style="cursor: col-resize;">&nbsp;</span>
-                                                            <div id="jqgh_jqgrid_CreatedDate"
-                                                                class="ui-jqgrid-sortable">Ngày sửa<span class="s-ico"
-                                                                    style="display:none"><span sort="asc"
-                                                                        class="ui-grid-ico-sort ui-icon-asc ui-state-disabled ui-icon ui-icon-triangle-1-n ui-sort-ltr"></span><span
-                                                                        sort="desc"
-                                                                        class="ui-grid-ico-sort ui-icon-desc ui-state-disabled ui-icon ui-icon-triangle-1-s ui-sort-ltr"></span></span>
-                                                            </div>
+                                                                class="ui-jqgrid-sortable">Thể loại</div>
                                                         </th>
                                                         <!-- image -->
                                                         <th id="jqgrid_Image" role="columnheader" class=""
@@ -373,25 +326,7 @@
                                                                 class="ui-jqgrid-resize ui-jqgrid-resize-ltr"
                                                                 style="cursor: col-resize;">&nbsp;</span>
                                                             <div id="jqgh_jqgrid_Image" class="ui-jqgrid-sortable">Hình
-                                                                ảnh<span class="s-ico" style="display:none"><span
-                                                                        sort="asc"
-                                                                        class="ui-grid-ico-sort ui-icon-asc ui-state-disabled ui-icon ui-icon-triangle-1-n ui-sort-ltr"></span><span
-                                                                        sort="desc"
-                                                                        class="ui-grid-ico-sort ui-icon-desc ui-state-disabled ui-icon ui-icon-triangle-1-s ui-sort-ltr"></span></span>
-                                                            </div>
-                                                        </th>
-                                                        <!-- hot -->
-                                                        <th id="jqgrid_IsHot" role="columnheader" class=""
-                                                            style="width: 30px;"><span
-                                                                class="ui-jqgrid-resize ui-jqgrid-resize-ltr"
-                                                                style="cursor: col-resize;">&nbsp;</span>
-                                                            <div id="jqgh_jqgrid_IsHot" class="ui-jqgrid-sortable">
-                                                                Hot<span class="s-ico" style="display:none"><span
-                                                                        sort="asc"
-                                                                        class="ui-grid-ico-sort ui-icon-asc ui-state-disabled ui-icon ui-icon-triangle-1-n ui-sort-ltr"></span><span
-                                                                        sort="desc"
-                                                                        class="ui-grid-ico-sort ui-icon-desc ui-state-disabled ui-icon ui-icon-triangle-1-s ui-sort-ltr"></span></span>
-                                                            </div>
+                                                                ảnh</div>
                                                         </th>
                                                         <!-- author -->
                                                         <th id="jqgrid_CreatedByName" role="columnheader" class=""
@@ -399,25 +334,39 @@
                                                                 class="ui-jqgrid-resize ui-jqgrid-resize-ltr"
                                                                 style="cursor: col-resize;">&nbsp;</span>
                                                             <div id="jqgh_jqgrid_CreatedByName"
-                                                                class="ui-jqgrid-sortable">Người viết<span class="s-ico"
-                                                                    style="display:none"><span sort="asc"
-                                                                        class="ui-grid-ico-sort ui-icon-asc ui-state-disabled ui-icon ui-icon-triangle-1-n ui-sort-ltr"></span><span
-                                                                        sort="desc"
-                                                                        class="ui-grid-ico-sort ui-icon-desc ui-state-disabled ui-icon ui-icon-triangle-1-s ui-sort-ltr"></span></span>
-                                                            </div>
+                                                                class="ui-jqgrid-sortable">Người viết</div>
+                                                        </th>
+                                                        <!-- new -->
+                                                        <th id="jqgrid_IsHot" role="columnheader" class=""
+                                                            style="width: 100px;"><span
+                                                                class="ui-jqgrid-resize ui-jqgrid-resize-ltr"
+                                                                style="cursor: col-resize;">&nbsp;</span>
+                                                            <div id="jqgh_jqgrid_IsHot" class="ui-jqgrid-sortable">
+                                                                Mới</div>
+                                                        </th>
+                                                        <!-- hot -->
+                                                        <th id="jqgrid_IsHot" role="columnheader" class=""
+                                                            style="width: 100px;"><span
+                                                                class="ui-jqgrid-resize ui-jqgrid-resize-ltr"
+                                                                style="cursor: col-resize;">&nbsp;</span>
+                                                            <div id="jqgh_jqgrid_IsHot" class="ui-jqgrid-sortable">
+                                                                Hot</div>
+                                                        </th>
+                                                        <!-- create at -->
+                                                        <th id="jqgrid_CreatedDate" role="columnheader" class=""
+                                                            style="width: 150px;"><span
+                                                                class="ui-jqgrid-resize ui-jqgrid-resize-ltr"
+                                                                style="cursor: col-resize;">&nbsp;</span>
+                                                            <div id="jqgh_jqgrid_CreatedDate"
+                                                                class="ui-jqgrid-sortable">Ngày tạo</div>
                                                         </th>
                                                         <!-- inactive -->
                                                         <th id="jqgrid_Inactive" role="columnheader" class=""
-                                                            style="width: 95px;"><span
+                                                            style="width: 75px;"><span
                                                                 class="ui-jqgrid-resize ui-jqgrid-resize-ltr"
                                                                 style="cursor: col-resize;">&nbsp;</span>
                                                             <div id="jqgh_jqgrid_Inactive" class="ui-jqgrid-sortable">
-                                                                Ngưng dùng<span class="s-ico" style="display:none"><span
-                                                                        sort="asc"
-                                                                        class="ui-grid-ico-sort ui-icon-asc ui-state-disabled ui-icon ui-icon-triangle-1-n ui-sort-ltr"></span><span
-                                                                        sort="desc"
-                                                                        class="ui-grid-ico-sort ui-icon-desc ui-state-disabled ui-icon ui-icon-triangle-1-s ui-sort-ltr"></span></span>
-                                                            </div>
+                                                                Ngưng dùng</div>
                                                         </th>
                                                     </tr>
                                                 </thead>
@@ -437,23 +386,23 @@
                                                         <!-- select -->
                                                         <td role="gridcell" style="height:0px;width:25px;"></td>
                                                         <!-- edit, save and delete -->
-                                                        <td role="gridcell" style="height: 0px; width: 80px;"></td>
+                                                        <td role="gridcell" style="height: 0px; width: 50px;"></td>
                                                         <!-- name -->
-                                                        <td role="gridcell" style="height:0px;width:210px;"></td>
+                                                        <td role="gridcell" style="height:0px;width:200px;"></td>
                                                         <!-- type -->
                                                         <td role="gridcell" style="height:0px;width:150px;"></td>
-                                                        <!-- create at -->
-                                                        <td role="gridcell" style="height:0px;width:130px;"></td>
-                                                        <!-- update at -->
-                                                        <td role="gridcell" style="height:0px;width:130px;"></td>
                                                         <!-- image -->
                                                         <td role="gridcell" style="height:0px;width:100px;"></td>
-                                                        <!-- hot -->
-                                                        <td role="gridcell" style="height:0px;width:30px;"></td>
                                                         <!-- author -->
                                                         <td role="gridcell" style="height:0px;width:150px;"></td>
+                                                        <!-- new -->
+                                                        <td role="gridcell" style="height:0px;width:100px;"></td>
+                                                        <!-- hot -->
+                                                        <td role="gridcell" style="height:0px;width:100px;"></td>
+                                                        <!-- create at -->
+                                                        <td role="gridcell" style="height:0px;width:150px;"></td>
                                                         <!-- inactive -->
-                                                        <td role="gridcell" style="height: 0px; width: 95px;"></td>
+                                                        <td role="gridcell" style="height: 0px; width: 75px;"></td>
                                                     </tr>
                                                     <!-- start news list -->
                                                     <!-- start single news -->
@@ -474,38 +423,36 @@
                                                                 class="btn btn-xs btn-default"
                                                                 data-original-title="Save Row"
                                                                 onclick="jQuery('#jqgrid').saveRow('71959');"><i
-                                                                    class="fa fa-save"></i></button><button
-                                                                class="btn btn-xs btn-default"
-                                                                data-original-title="Cancel"
-                                                                onclick="jQuery('#jqgrid').restoreRow('71959');"><i
-                                                                    class="fa fa-times"></i></button></td>
+                                                                    class="fa fa-save"></i></button></td>
                                                         <!-- name -->
                                                         <td role="gridcell" style="" title='Giới thiệu sách "Thức tỉnh"'
                                                             aria-describedby="jqgrid_Name"><a
                                                                 style="text-decoration: none;"
-                                                                href="createNews.html">Giới thiệu sách "Thức tỉnh"</a></td>
+                                                                href="createNews.html">Giới thiệu sách "Thức tỉnh"</a>
+                                                        </td>
                                                         <!-- type -->
                                                         <td role="gridcell" style="" title="Giới thiệu Sách"
                                                             aria-describedby="jqgrid_NewsGroupName">Giới thiệu Sách</td>
-                                                        <!-- create at -->
-                                                        <td role="gridcell" style="text-align:center;"
-                                                            title="23/03/2016" aria-describedby="jqgrid_CreatedDate">23/03/2016</td>
-                                                        <!-- update at -->
-                                                        <td role="gridcell" style="text-align:center;"
-                                                            title="23/04/2016" aria-describedby="jqgrid_UpdateDate">23/04/2016</td>
                                                         <!-- image -->
                                                         <td role="gridcell" style="text-align:center;" title=""
                                                             aria-describedby="jqgrid_Image"><img
                                                                 class="img-jqgrid-thumbnail"
                                                                 src="newsImages/product1.jpg"
                                                                 originalvalue="newsImages/product1.jpg"></td>
+                                                        <!-- author -->
+                                                        <td role="gridcell" style="" title="Admin"
+                                                            aria-describedby="jqgrid_CreatedByName">Admin</td>
+                                                        <!-- new -->
+                                                        <td role="gridcell" style="text-align:center;" title=""
+                                                            aria-describedby="jqgrid_IsNew"><input type="checkbox"
+                                                                value="false" offval="no" disabled="disabled"></td>
                                                         <!-- hot -->
                                                         <td role="gridcell" style="text-align:center;" title=""
                                                             aria-describedby="jqgrid_IsHot"><input type="checkbox"
                                                                 value="false" offval="no" disabled="disabled"></td>
-                                                        <!-- author -->
-                                                        <td role="gridcell" style="" title="Võ Tiến Trường"
-                                                            aria-describedby="jqgrid_CreatedByName">LTP crazy</td>
+                                                        <!-- create at -->
+                                                        <td role="gridcell" style="text-align:center;"
+                                                            title="23/03/2016" aria-describedby="jqgrid_CreatedDate">23/03/2016</td>
                                                         <!-- inactive -->
                                                         <td role="gridcell" style="text-align:center;" title=""
                                                             aria-describedby="jqgrid_Inactive"><input type="checkbox"
@@ -537,15 +484,6 @@
                                                                         data-original-title="Delete selected row">
                                                                         <div class="btn btn-sm btn-primary"><span
                                                                                 class="fa fa-trash-o"></span></div>
-                                                                    </td>
-                                                                    <td class="ui-pg-button ui-state-disabled"
-                                                                        style="width:4px;" data-original-title=""
-                                                                        title=""><span class="ui-separator"></span></td>
-                                                                    <td class="ui-pg-button ui-corner-all" title=""
-                                                                        id="refresh_jqgrid"
-                                                                        data-original-title="Reload Grid">
-                                                                        <div class="btn btn-sm btn-primary"><span
-                                                                                class="fa fa-refresh"></span></div>
                                                                     </td>
                                                                 </tr>
                                                             </tbody>

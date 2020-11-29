@@ -387,7 +387,7 @@
                                                     </div>
                                                     <div class="col-md-9 col-xs-12">
                                                         <div class="row">
-                                                            <section class="col col-6">
+                                                            <section class="col col-xs-12">
                                                                 <label class="label">Thể loại</label>
                                                                 <label class="input">
                                                                     <input type="text" ng-model="product.SKU"
@@ -466,7 +466,7 @@
                                                     </div>
                                                     <div class="col-md-9 col-xs-12">
                                                         <div class="row">
-                                                            <section class="col col-6">
+                                                            <section class="col col-xs-12">
                                                                 <label class="label">Mã sản phẩm / SKU</label>
                                                                 <label class="input">
                                                                     <input type="text" ng-model="product.SKU"
@@ -475,7 +475,7 @@
                                                             </section>
                                                         </div>
                                                         <div class="row">
-                                                            <section class="col col-6 ng-hide"
+                                                            <section class="col col-xs-12 ng-hide"
                                                                 ng-show="product.IsTrackingInventory>0">
                                                                 <label class="label">Số lượng</label>
                                                                 <label class="input">
@@ -522,7 +522,7 @@
                                                     </div>
                                                     <div class="col-md-9 col-xs-12">
                                                         <div class="row">
-                                                            <section class="col col-6">
+                                                            <section class="col col-xs-12">
                                                                 <label class="label">Tác giả</label>
                                                                 <label class="input">
                                                                     <input type="text" ng-model="product.SKU"
@@ -531,8 +531,7 @@
                                                             </section>
                                                         </div>
                                                         <div class="row">
-                                                            <section class="col col-6 ng-hide"
-                                                                ng-show="product.IsTrackingInventory>0">
+                                                            <section class="col col-xs-12">
                                                                 <label class="label">Công ty phát hành</label>
                                                                 <label class="input">
                                                                     <input type="text" ng-model="product.Quantity"
@@ -553,16 +552,20 @@
                                                     <div class="col-md-9 col-xs-12">
                                                         <section>
                                                             <label class="label">Loại bìa</label>
-                                                            <div class="row">
-                                                                <div class="col col-4">
-                                                                    <input type="radio" id="biaCung" name="loaiBia"
-                                                                        value="biaCung">
-                                                                    <label for="biaCung">Bìa cứng</label><br>
-                                                                    
-                                                                    <input type="radio" id="biaMem" name="loaiBia"
-                                                                        value="biaMem">
-                                                                    <label for="biaMem">Bìa mềm</label><br>
-                                                                </div>
+                                                            <div class="inline-group">
+                                                                <label class="radio">
+                                                                    <input type="radio" 
+                                                                        name="radio-inline" ng-model="product.IsBest"
+                                                                        class="ng-pristine ng-untouched ng-valid">
+                                                                    <i></i>Bìa cứng
+                                                                </label>
+
+                                                                <label class="radio">
+                                                                    <input type="radio" name="radio-inline" checked="checked"
+                                                                        ng-model="product.IsNew"
+                                                                        class="ng-pristine ng-untouched ng-valid">
+                                                                    <i></i>Bìa mềm
+                                                                </label>
                                                             </div>
                                                         </section>
                                                     </div>
