@@ -6160,4 +6160,14 @@ p.lost-password a:hover {
     color: #c29958;
 }
 
+#cancel {
+    width: 150px;
+    height: 30px;
+    background-color: #ffc107;
+    border-radius: 4px;
+}
+
+#cancel:hover {
+    background-color: #ffd801;
+}
 /*------ end Compare Page Wrapper -----*/

@@ -372,7 +372,7 @@
                                                 Quản lí đơn hàng</a>
                                             
                                             <a href="#address-edit" data-toggle="tab" class=""><i class="fas fa-map-marker"></i>
-                                                Địa chỉ</a>
+                                                Địa chỉ giao hàng</a>
                                             <a href="#account-info" data-toggle="tab" class=""><i class="far fa-user"></i>
                                                 Thông tin tài khoản</a>
                                             <a href="login.html"><i class="fas fa-sign-out-alt"></i> Đăng xuất</a>
@@ -405,7 +405,7 @@
                                                                     <td>Aug 22, 2018</td>
                                                                     <td>Đã huỷ</td>
                                                                     <td>310000đ</td>
-                                                                    <td><a href="cart.html" class="btn btn-sqr">Xem</a>
+                                                                    <td><a href="bill-details.html" class="btn btn-sqr">Xem</a>
                                                                     </td>
                                                                 </tr>
                                                                 <tr>
@@ -413,7 +413,7 @@
                                                                     <td>July 22, 2018</td>
                                                                     <td>Đã nhận</td>
                                                                     <td>200.000đ</td>
-                                                                    <td><a href="cart.html" class="btn btn-sqr">Xem</a>
+                                                                    <td><a href="bill-details.html" class="btn btn-sqr">Xem</a>
                                                                     </td>
                                                                 </tr>
                                                                 <tr>
@@ -421,7 +421,7 @@
                                                                     <td>June 12, 2017</td>
                                                                     <td>Đang giao</td>
                                                                     <td>99000đ</td>
-                                                                    <td><a href="cart.html" class="btn btn-sqr">Xem</a>
+                                                                    <td><a href="bill-details.html" class="btn btn-sqr">Xem</a>
                                                                     </td>
                                                                 </tr>
                                                             </tbody>
@@ -435,20 +435,20 @@
                                             <!-- Single Tab Content Start -->
                                             <div class="tab-pane fade" id="address-edit" role="tabpanel">
                                                 <div class="myaccount-content">
-                                                    <h5>Địa chỉ thanh toán</h5>
+                                                    <h5>Địa chỉ giao hàng</h5>
                                                     <div class="account-details-form">
                                                         <form action="#">
                                                             <div class="row"> 
                                                                 <div class="col-lg-8">
                                                                     <div class="single-input-item">
-                                                                        <label for="last-name" class="required">Địa chỉ</label>
-                                                                        <input type="text" id="last-name" placeholder="Địa chỉ">
+                                                                        <label for="address-details" class="required">Địa chỉ</label>
+                                                                        <input type="text" id="address-details" placeholder="Địa chỉ">
                                                                     </div>
                                                                 </div>
                                                                 <div class="col-lg-4">
                                                                     <div class="single-input-item">
-                                                                        <label for="last-name" class="required">Tỉnh / Thành phố</label>
-                                                                        <input type="text" id="last-name" placeholder="Tỉnh / Thành phố">
+                                                                        <label for="city" class="required">Tỉnh / Thành phố</label>
+                                                                        <input type="text" id="city" placeholder="Tỉnh / Thành phố">
                                                                     </div>
                                                                 </div>
                                                              </div>
@@ -472,41 +472,109 @@
                                                                 <div class="col-lg-8">
                                                                     <div class="single-input-item">
                                                                         <label for="last-name" class="required">Họ tên</label>
-                                                                        <input type="text" id="last-name" placeholder="Họ và tên">
+                                                                        <input type="text" id="last-name" placeholder="Họ và tên" required>
                                                                     </div>
                                                                 </div>
                                                                 <div class="col-lg-4">
                                                                     <div class="single-input-item">
                                                                         <label for="birthday" class="required">Ngày sinh</label>
-                                                                        <input type="date" id="birthday">
+                                                                        <input type="date" id="birthday" required>
                                                                     </div>
                                                                 </div>
                                                             </div>
                                                             <div class="row"> 
                                                                 <div class="col-lg-8">
                                                                     <div class="single-input-item">
-                                                                        <label for="last-name" class="required">Địa chỉ</label>
-                                                                        <input type="text" id="last-name" placeholder="Địa chỉ">
+                                                                        <label for="addres" class="required">Địa chỉ</label>
+                                                                        <input type="text" id="addres" placeholder="Địa chỉ" required>
                                                                     </div>
                                                                 </div>
                                                                 <div class="col-lg-4">
                                                                     <div class="single-input-item">
-                                                                        <label for="last-name" class="required">Tỉnh / Thành phố</label>
-                                                                        <input type="text" id="last-name" placeholder="Tỉnh / Thành phố">
+                                                                        <label for="city1" class="required">Tỉnh / Thành phố</label>
+                                                                        <input type="text" id="city1" placeholder="Tỉnh / Thành phố" required>
+                                                                        <!--
+                                                                        <select id="city" name="city" class="validate[required] form-control">
+                                                                            <option value="">Tỉnh/Thành phố *</option>
+                                                                            <option value="254">Hà Nội</option>
+                                                                            <option value="255">Hồ Chí Minh</option>
+                                                                            <option value="256">An Giang</option>
+                                                                            <option value="257">Bà Rịa - Vũng Tàu</option>
+                                                                            <option value="258">Bắc Ninh</option>
+                                                                            <option value="259">Bắc Giang</option>
+                                                                            <option value="260">Bình Dương</option>
+                                                                            <option value="261">Bình Định</option>
+                                                                            <option value="262">Bình Phước</option>
+                                                                            <option value="263">Bình Thuận</option>
+                                                                            <option value="264">Bến Tre</option>
+                                                                            <option value="265">Bắc Cạn</option>
+                                                                            <option value="266">Cần Thơ</option>
+                                                                            <option value="267">Khánh Hòa</option>
+                                                                            <option value="268">Thừa Thiên Huế</option>
+                                                                            <option value="269">Lào Cai</option>
+                                                                            <option value="270">Quảng Ninh</option>
+                                                                            <option value="271">Đồng Nai</option>
+                                                                            <option value="272">Nam Định</option>
+                                                                            <option value="273">Cà Mau</option>
+                                                                            <option value="274">Cao Bằng</option>
+                                                                            <option value="275">Gia Lai</option>
+                                                                            <option value="276">Hà Giang</option>
+                                                                            <option value="277">Hà Nam</option>
+                                                                            <option value="278">Hà Tĩnh</option>
+                                                                            <option value="279">Hải Dương</option>
+                                                                            <option value="280">Hải Phòng</option>
+                                                                            <option value="281">Hòa Bình</option>
+                                                                            <option value="282">Hưng Yên</option>
+                                                                            <option value="283">Kiên Giang</option>
+                                                                            <option value="284">Kon Tum</option>
+                                                                            <option value="285">Lai Châu</option>
+                                                                            <option value="286">Lâm Đồng</option>
+                                                                            <option value="287">Lạng Sơn</option>
+                                                                            <option value="288">Long An</option>
+                                                                            <option value="289">Nghệ An</option>
+                                                                            <option value="290">Ninh Bình</option>
+                                                                            <option value="291">Ninh Thuận</option>
+                                                                            <option value="292">Phú Thọ</option>
+                                                                            <option value="293">Phú Yên</option>
+                                                                            <option value="294">Quảng Bình</option>
+                                                                            <option value="295">Quảng Nam</option>
+                                                                            <option value="296">Quảng Ngãi</option>
+                                                                            <option value="297">Quảng Trị</option>
+                                                                            <option value="298">Sóc Trăng</option>
+                                                                            <option value="299">Sơn La</option>
+                                                                            <option value="300">Tây Ninh</option>
+                                                                            <option value="301">Thái Bình</option>
+                                                                            <option value="302">Thái Nguyên</option>
+                                                                            <option value="303">Thanh Hóa</option>
+                                                                            <option value="304">Tiền Giang</option>
+                                                                            <option value="305">Trà Vinh</option>
+                                                                            <option value="306">Tuyên Quang</option>
+                                                                            <option value="307">Vĩnh Long</option>
+                                                                            <option value="308">Vĩnh Phúc</option>
+                                                                            <option value="309">Yên Bái</option>
+                                                                            <option value="310">Đắc Lắc</option>
+                                                                            <option value="311">Đồng Tháp</option>
+                                                                            <option value="312">Đà Nẵng</option>
+                                                                            <option value="313">Đắc Nông</option>
+                                                                            <option value="314">Hậu Giang</option>
+                                                                            <option value="315">Bạc Liêu</option>
+                                                                            <option value="316">Điện Biên</option>
+                                                                        </select>
+                                                                    -->
                                                                     </div>
                                                                 </div>
                                                             </div>
                                                             <div class="row"> 
                                                                 <div class="col-lg-6">
                                                                     <div class="single-input-item">
-                                                                        <label for="display-name" class="required">Tên tài khoản</label>
-                                                                        <input type="text" id="display-name" placeholder="Tên tài khoản">
+                                                                        <label for="phone1" class="required">Số điện thoại</label>
+                                                                        <input type="text" id="phone1" placeholder="Số điện thoại" required>
                                                                     </div>
                                                                 </div>
                                                                 <div class="col-lg-6">
                                                                     <div class="single-input-item">
-                                                                        <label for="email" class="required">Email</label>
-                                                                        <input type="email" id="email" placeholder="Email">
+                                                                        <label for="email1" class="required">Email</label>
+                                                                        <input type="email" id="email1" placeholder="Email" required>
                                                                     </div>
                                                                 </div>
                                                             </div>
@@ -515,19 +583,19 @@
                                                                 <legend>Đổi mật khẩu</legend>
                                                                 <div class="single-input-item">
                                                                     <label for="current-pwd" class="required">Mật khẩu hiện tại</label>
-                                                                    <input type="password" id="current-pwd" placeholder="Mật khẩu hiện tại">
+                                                                    <input type="password" id="current-pwd" placeholder="Mật khẩu hiện tại" required>
                                                                 </div>
                                                                 <div class="row">
                                                                     <div class="col-lg-6">
                                                                         <div class="single-input-item">
                                                                             <label for="new-pwd" class="required">Mật khẩu mới</label>
-                                                                            <input type="password" id="new-pwd" placeholder="Mật khẩu mới">
+                                                                            <input type="password" id="new-pwd" placeholder="Mật khẩu mới" required>
                                                                         </div>
                                                                     </div>
                                                                     <div class="col-lg-6">
                                                                         <div class="single-input-item">
                                                                             <label for="confirm-pwd" class="required">Xác nhận mật khẩu</label>
-                                                                            <input type="password" id="confirm-pwd" placeholder="Xác nhận mật khẩu">
+                                                                            <input type="password" id="confirm-pwd" placeholder="Xác nhận mật khẩu" required>
                                                                         </div>
                                                                     </div>
                                                                 </div>
