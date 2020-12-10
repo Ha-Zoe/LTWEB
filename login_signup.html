@@ -32,10 +32,10 @@
     <link rel="stylesheet" href="css/responsive.css">
     <!-- modernizr css -->
     <script src="js/vendor/modernizr-2.8.3.min.js"></script>
-
-    <style>
-
-    </style>
+     <!-- ajax css -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src=" https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.0/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.19.0/jquery.validate.min.js"></script>
 </head>
 
 <body class="login">
@@ -374,104 +374,64 @@
 
                     </ul>
 
-                    <form method="post" action="#" id="login" style="display: block;">
-                        <input type="hidden" value="ff58de48a7cfa47bfbe05bdb52b119dc-3a6aa0ee0cb99e55de7b125a11df9ed4"
-                            name="csrf" id="csrf">
+                    <form method="post" action="#" id="login" style="display: block;" >
                         <div class="form-group">
-                            <div class="usernameformError parentFormformAcount formError"
-                                style="opacity: 0.87; position: absolute; top: 277.6px; left: 963.8px; margin-top: -36px;">
-                                <div class="formErrorContent">* Trường này bắt buộc<br></div>
-                                <div class="formErrorArrow">
-                                    <div class="line10">
-                                        <!-- -->
-                                    </div>
-                                    <div class="line9">
-                                        <!-- -->
-                                    </div>
-                                    <div class="line8">
-                                        <!-- -->
-                                    </div>
-                                    <div class="line7">
-                                        <!-- -->
-                                    </div>
-                                    <div class="line6">
-                                        <!-- -->
-                                    </div>
-                                    <div class="line5">
-                                        <!-- -->
-                                    </div>
-                                    <div class="line4">
-                                        <!-- -->
-                                    </div>
-                                    <div class="line3">
-                                        <!-- -->
-                                    </div>
-                                    <div class="line2">
-                                        <!-- -->
-                                    </div>
-                                    <div class="line1">
-                                        <!-- -->
-                                    </div>
-                                </div>
-                            </div>
-                            <input type="text" name="username" id="username" class="validate[required] form-control"
-                                placeholder="Nhập email hoặc tên đăng nhập">
+                            <input type="mail" name="username" id="username" class=" form-control"
+                                placeholder="Nhập email">
+                            <p id="username-error"></p>
                         </div>
                         <div class="form-group">
-                            <input type="password" name="password" id="password" class="validate[required] form-control"
-                                placeholder="Mật khẩu"></div>
+                            <input type="password" name="password" id="password" class=" form-control"
+                                placeholder="Mật khẩu">
+                            <p id="password-error"></p>
+                        </div>
                         <div class="user-foot text-center">
                             <div class="single-login">
                                 <input id="ckb1" type="checkbox" name="remember-me" value="forever">
-                                <label for="remember-me">
+                                <label for="ckb1">
                                     Ghi nhớ
                                 </label>
                             </div>
-                            <div style="width: 100%;clear: both;">
-                                <button type="button" id="btnsignin" class="clear btn btn-pink full text-uppercase">
+                            <div class="mb-15 " style="width: 100%;clear: both;">
+                                <button type="submit" id="btnsignin" style="border: 1px solid #9f9e9e;">
                                     Đăng nhập </button>
                             </div>
-                            <div>
-                                <a href="forget-password.html" class="clearfix" rel="nofollow">
-                                    Quên mật khẩu?
+                            <div class="mb-15 ">
+                                <a href="forget-password.html" class="clearfix" rel="nofollow" style="text-decoration: underline;">
+                                    <i class="fas fa-question-circle"></i>
+                                    Quên mật khẩu
                                 </a>
                             </div>
-                            <div class="mb-15 ">
-                                <p class="clearfix">Hoặc đăng nhập với</p>
 
+                            <div class="mb-15 ">
+                                <p class="clearfix" style="color: rgb(122, 122, 122);">Hoặc đăng nhập với</p>
                             </div>
+
                             <div class="loginFb mb-15 " rel="nofollow">
-                                <a href="#"> <i class="fab fa-facebook-f"></i> Đăng nhập
-                                    bằng facebook</a></div>
+                                <a href="#"> <i class="fab fa-facebook-f"></i> Đăng nhập bằng facebook</a>
+                            </div>
+
                             <div class="loginGg mb-15 " rel="nofollow">
-                                <a href="#"><i class="fab fa-google-plus-g"></i> Đăng nhập Google</a></div>
+                                <a href="#"><i class="fab fa-google-plus-g"></i> Đăng nhập Google</a>
+                            </div>
                         </div>
 
                     </form>
 
-                    <form method="post" action="#" id="signup" style="display: none;">
-                        <input type="hidden" value="cf7a71317d3432e6aa596b715f41a3a0-9a22346dccbfa9c9e523490be65e9540"
-                            name="csrf" id="csrf">
-                        <!-- <div class="form-group">
-                            <input type="text" name="username" id="username"
-                                class="validate[required,minSize[4],maxSize[32]] form-control"
-                                placeholder="Tên đăng nhập (*)"></div> -->
+                       <form method="post" action="#" id="signup" style="display: none;">
                         <div class="form-group">
                             <input type="text" name="fullName" id="fullName"
-                                class="validate[required,minSize[4],maxSize[32]] form-control"
+                                class="form-control"
                                 placeholder="Họ tên (*)"></div>
-                        <!-- <div class="form-group">
-                            <input type="date" id="birthday" name="birthday" value="" placeholder="Ngày sinh"
-                                class="validate[required] form-control input-sm"></div> -->
                         <div class="form-group">
                             <input type="text" name="mobile" id="mobile"
-                                class="validate[required,custom[phone]] form-control" placeholder="Điện thoại (*)">
+                                class="form-control" placeholder="Điện thoại (*)">
                         </div>
                         <div class="form-group">
                             <input type="email" name="email" id="email"
-                                class="validate[required,custom[email]] form-control" placeholder="Email (*)"></div>
+                                class="form-control" placeholder="Email (*)"></div>
                         <div class="form-group">
-                            <select id="cityId" name="cityId" class="validate[required] form-control">
+                            <select id="cityId" name="cityId" class="form-control" style="color: #495057 !important;">
                                 <option value="">Tỉnh/Thành phố *</option>
                                 <option value="254">Hà Nội</option>
                                 <option value="255">Hồ Chí Minh</option>
@@ -537,35 +497,32 @@
                                 <option value="315">Bạc Liêu</option>
                                 <option value="316">Điện Biên</option>
                             </select></div>
-                        <!-- <div class="form-group">
-                            <select id="districtId" name="districtId" class="validate[required] form-control">
-                                <option value="">Quận/ Huyện *</option> 
-                            </select></div>-->
-                        <div class="form-group"> <input type="text" id="address" name="address" value=""
-                                placeholder="Địa chỉ chi tiết  (*)" class="validate[required] form-control input-sm">
+                        <div class="form-group"> 
+                            <input type="text" id="address" name="address" value=""
+                                placeholder="Địa chỉ chi tiết  " class=" form-control input-sm">
                         </div>
                         <div class="form-group">
-                            <input type="password" name="password" id="password"
-                                class="validate[required,minSize[6]] form-control"
-                                placeholder="Mật khẩu của bạn (*)"></div>
+                            <input type="password" name="pwd" id="pwd" class=" form-control"
+                                placeholder="Mật khẩu của bạn (*)">
+                            </div>
                         <div class="form-group">
-                            <input type="password" name="rePassword" id="rePassword"
-                                class="validate[required,minSize[6],equals[password]] form-control"
-                                placeholder="Nhập lại mật khẩu (*)"></div>
+                            <input type="password" name="rePassword" id="rePassword"  class=" form-control"
+                                placeholder="Nhập lại mật khẩu (*)">
+                            </div>
                         <div class="form-group text-center">
-                            <button type="submit" class="btn btn-pink full text-uppercase">
-                                Đăng ký </button></div>
+                            <button type="submit"  style="border: 1px solid #9f9e9e;">
+                                Đăng ký </button>
+                            </div>
                         <div class="form-group d-none">
-                            <i>Lưu ý: các trường dấu * là bắt buộc phải nhập</i></div>
+                            <i>Lưu ý: các trường dấu <span class="required">*</span> là bắt buộc phải nhập</i></div>
                     </form>
 
                 </div>
 
             </div>
-
-
         </div>
     </div>
+</body>
     <!-- user-login-area-end -->
     <!-- footer-area-start -->
     <footer>
@@ -683,13 +640,14 @@
         <!-- footer-bottom-end -->
     </footer>
     <!-- footer-area-end -->
-
-
-    <!-- all js here -->
-    <!-- jquery latest version -->
-    <script src="js/vendor/jquery-1.12.0.min.js"></script>
+ <!-- all js here -->
+    <!-- jquery  -->
+    <script src="js/jquery.min.js"></script>
+    <script src="js/jquery2.min.js"></script>
     <!-- popper js -->
     <script src="js/popper.min.js"></script>
+    <!-- validate js -->
+    <script src="js/jquery.validate.min.js"></script>
     <!-- bootstrap js -->
     <script src="js/bootstrap.min.js"></script>
     <!-- owl.carousel js -->
@@ -714,6 +672,4 @@
     <script src="js/plugins.js"></script>
     <!-- main js -->
     <script src="js/main.js"></script>
-</body>
-
 </html>

@@ -447,7 +447,99 @@
     $('#showreg').on('click', function() {
         $('#hidereg').slideToggle(900);
     });
-    
+    /*-------------------------
+      Validation for login - sign up form  function
+    --------------------------*/
+
+    $(document).ready(function () {
+        $("#login").validate({
+            errorClass: "error fail-alert",
+            validClass: "valid success-alert",
+            rules: {
+                username: {
+                    required: true,
+                    email: true
+                },
+                password: {
+                    required: true,
+                    min: 8
+                }
+            },
+            messages: {
+                username: {
+                    required: "Bạn chưa nhập Email",
+                },
+                password: {
+                    required: "Bạn chưa nhập Password",
+                    min: "Password ít nhất phải 8 kí tự"
+                },
+
+            }
+        });
+    });
+
+    $(document).ready(function () {
+        $("#signup").validate({
+            errorClass: "error fail-alert",
+            validClass: "valid success-alert",
+            rules: {
+                fullName: {
+                    required: true,
+                },
+                mobile: {
+                    required: true,
+                    phoneNumber: {matches:"[0-9]+",minlength:10, maxlength:11}
+                },
+                email: {
+                    required: true,
+                    email: true
+                },
+                cityId: {
+                    required: true,
+                },
+                address: {
+                    required: true,
+                },
+                pwd: {
+                    required: true,
+                    min: 8
+                },
+                rePassword: {
+                    required: true,
+                    equalTo: "#password"
+                }
+            },
+            messages: {
+                fullName: {
+                    required: "Bạn chưa nhập Họ Tên",
+                },
+                mobile: {
+                    required: "Bạn chưa nhập Số Điện Thoại",
+                    phoneNumber: "Số Điện Thoại phải đúng định dạng: 0123456789"
+                },
+                email: {
+                    required: "Bạn chưa nhập Email",
+                    email: "Email phải đúng định dạng: abc@domain.tld"
+                },
+                cityId: {
+                    required: "Bạn chưa nhập Tỉnh thành",
+                },
+                address: {
+                    required: "Bạn chưa nhập Địa chỉ",
+                },
+                pwd: {
+                    required: "Bạn chưa nhập Password",
+                    min: "Password ít nhất phải 8 kí tự"
+                },
+                rePassword: {
+                    required: "Bạn chưa xác nhận Password",
+                    equalTo: "Password nhập lại của bạn chưa đúng"
+                }
+
+            }
+        });
+    });
+
     /*Category accordion*/
     $('.rx-parent').on('click', function() {
         $('.rx-child').slideToggle();
